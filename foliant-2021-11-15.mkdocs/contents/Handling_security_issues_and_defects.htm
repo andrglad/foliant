@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Handling security issues and defects</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" />
+</head>
+<body>
+  <h1 data-list-level="2">Handling security issues and defects</h1>
+  <p>When the security pipeline scan is over, the results of the performed security tests are imported from AST tools into Maverix. They should be analyzed and processed. This is a task for Security Engineer.</p>
+  <p>Results of the security scan are collected, triaged, and analyzed by Maverix. Based on the machine learning model, Maverix performs automated analysis of security issues in the context of true/false positives. The same status, recommendations, assumptions about causes, and corrective actions should be assigned to similar true positive results. Maverix groups detected security issues based on the correlation model. As a result, similar true positive issues receive the same status and recommendations for remediation.</p>
+  <p>In this process, security issues found by AST tools are aggregated into security defects. Multiple security issues can be grouped into one security defect. Security defects are assigned priority and severity values. The security defect is exported from Maverix into the Defect Management System for further processing by the development team.</p>
+  <p>The workspace and project for a particular defect are defined based on the application settings and defect management configuration performed in Maverix in the earlier stages, for more details, see the <a data-xref="{title}" href="Sync_with_Jira.htm">Sync with Jira</a> section. When the defect is fixed, Maverix analyzes the code changes and scan results based on pipeline data and confirms the new status. Also, Maverix analyzes the scan history and validates that security issues have been fixed properly.</p>
+  <p>Maverix provides an intuitive interface that allows users to view and group security issues, as well as create, filter, and verify security defects, and then synchronize security defects with the Defect Management System.</p>
+  <ol class="RoundSquare">
+    <li><a href="Security_Issues_and_Defects.htm">Security Issues and Defects</a>
+      <ol>
+        <li><a href="Security_Issues.htm">Security Issues</a></li>
+        <li><a href="Grouping_Security_Issues.htm">Grouping Security Issues</a></li>
+        <li><a href="Risk_acceptance.htm">Risk acceptance</a></li>
+        <li><a href="Export_Issues_to_a_File.htm">Export Issues to a File</a></li>
+        <li><a href="Sync_with_Jira.htm">Sync with Jira</a></li>
+        <li><a href="Security_Defects.htm">Security Defects</a></li>
+        <li><a href="Sync_of_Security_Defect_with_Defect_Tracking_System.htm">Sync of Security Defect with Defect Tracking System</a></li>
+        <li><a href="Manual_Verification_of_Security_Defects.htm">Manual Verification of Security Defects</a></li>
+      </ol>
+    </li>
+  </ol>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+</body>
+</html>

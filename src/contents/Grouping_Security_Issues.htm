@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Grouping Security Issues</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" />
+</head>
+<body>
+  <h3 data-list-level="4">Grouping Security Issues</h3>
+  <p>Maverix finds the correlation between security issues imported from AST tools and groups them together. It performs an automated analysis of security issues in the context of true/false positives based on the internal machine learning model. The same status, recommendations, assumptions about causes, and corrective actions are assigned to similar true positive results. Based on the correlation model, the identified security issues are grouped and aggregated into security defects.</p>
+  <p>Also, security issues can be grouped manually. Click the <strong>Show filters</strong> <img alt="image152.png" class="ns" height="17" src="assets/images/image193.png" width="30" /> button at the top right to setup the filter. There are four filtering modes: one using correlation rules and three customizable.</p>
+  <p>Switch on the Apply correlation rules by default selector and select a correlation rule to enable filtering using the correlation rule (only for SAST vulnerabilities).</p>
+  <p> </p>
+  <p style="text-align: center"><img height="760" src="assets/images/image396.png" width="95%" /></p>
+  <p> </p>
+  <p>Three customizable filters offer the following options:</p>
+  <div style=" margin-left: 0;">
+    <ul class="Disc">
+      <li>By <strong>Issue properties</strong></li>
+      <li>By <strong>Linked entities</strong></li>
+      <li>By <strong>AVC</strong>.</li>
+    </ul>
+  </div>
+  <p>By choosing the <strong>Issue properties</strong> filtering option, we get the ability to sort security issues by the following criteria:</p>
+  <ul class="Disc">
+    <li><strong>Sort by</strong> — <strong>Severity: High to Low</strong>/<strong>Low to High</strong> and <strong>Newest first</strong>/<strong>Last updated</strong>.</li>
+    <li><strong>By type</strong> (<strong>SAST</strong>, <strong>SCA Compliance</strong>, <strong>SCA Security</strong>, and <strong>DAST</strong>).</li>
+    <li><strong>By status</strong> (<strong>To Verify</strong>, <strong>Confirmed</strong>, <strong>Open</strong>, <strong>Fixed</strong>, and <strong>False Positive</strong>).</li>
+    <li><strong>By tool</strong> (<strong>NetSparker</strong>, <strong>Acunetix</strong>, <strong>MDast</strong>, <strong>Wallarm</strong>, <strong>IBM Security AppScan</strong>, <strong>Fortify Static Code Analyzer</strong>, and <strong>SonarQube</strong>).</li>
+    <li><strong>By severity</strong> (<strong>Low</strong>, <strong>Medium</strong>, <strong>High</strong>, and <strong>Critical</strong>).</li>
+    <li><strong>By source</strong>.</li>
+    <li><strong>By category</strong>.</li>
+    <li><strong>By CWE ID</strong>.</li>
+    <li><strong>Updated in</strong> (<strong>Last week</strong>, <strong>Last month</strong>, <strong>Last 3 months</strong>, <strong>Last 6 months</strong>, <strong>Last year</strong>, <strong>Last 2 years</strong>, and <strong>Last 3 years</strong>).</li>
+  </ul>
+  <p> </p>
+  <table border="0" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+    <colgroup>
+      <col style="width: 74px;" />
+      <col style="width: 912px;" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><img class="ns" height="54" src="assets/images/image.png" width="55" /></td>
+        <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><strong><span style="color:#164a96;"><span style="font-size:1rem">Several parameters can be selected simultaneously in the by type, by status, by tool, by severity, and updated in fields. Please see picture below..</span></span></strong></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p style="text-align: center"><img height="756" src="assets/images/image397.png" width="95%" /></p>
+  <p> </p>
+  <p>Select a group of security issues from the available options. To group security issues more precisely, Maverix allows you to apply multiple filtering criteria simultaneously. The security issues in the picture below are grouped according to the following selected options (<strong>SAST</strong> and <strong>DAST</strong> in the <strong>by type</strong> field, <strong>To verify</strong> in the <strong>by status</strong> field, and <strong>WEB-INF</strong> in the <strong>by source</strong> field).</p>
+  <p> </p>
+  <p style="text-align: center"><img height="1176" src="assets/images/image398.png" width="95%" /></p>
+  <p> </p>
+  <p>Select the <strong>Linked entities</strong> filtering option to sort security issues based on the associated entities (codebases, artifacts, or instances) using the following fields:</p>
+  <ul class="Disc">
+    <li><strong>Sort by</strong> — <strong>Severity: High to Low</strong>/<strong>Low to High</strong> and <strong>Newest first</strong>/<strong>Last updated</strong>.</li>
+    <li><strong>By type</strong> (<strong>SAST</strong>, <strong>SCA Compliance</strong>, <strong>SCA Security</strong>, and <strong>DAST</strong>).</li>
+    <li><strong>By codebase</strong></li>
+    <li><strong>By artifact</strong></li>
+    <li><strong>By instance</strong></li>
+    <li><strong>By repository proxy</strong></li>
+  </ul>
+  <p> </p>
+  <table border="0" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+    <colgroup>
+      <col style="width: 76px;" />
+      <col style="width: 910px;" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><img class="ns" height="54" src="assets/images/image.png" width="55" /></td>
+        <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><strong><span style="color:#164a96;"><span style="font-size:1rem">Several parameters can be selected simultaneously in the by type, by codebase, by artifact, by instance, and by repository proxy fields. Please see picture below..</span></span></strong></td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="text-align: center"><br />
+    <img height="955" src="assets/images/image399.png" width="95%" />
+  </p>
+  <p> </p>
+  <p>Select the <strong>AVC</strong> filtering option to sort out security issues using the AVC analysis results:</p>
+  <ul class="Disc">
+    <li><strong>Sort by</strong> — <strong>Severity: High to Low/Low to High</strong> and <strong>Newest first/Last updated</strong>.</li>
+    <li><strong>By type</strong> (<strong>SAST</strong>, <strong>SCA Compliance</strong>, <strong>SCA Security</strong>, and <strong>DAST</strong>).</li>
+    <li><strong>By AVC status</strong> (<strong>False Positive</strong>, <strong>True Positive</strong>).</li>
+    <li><strong>By lower limit of accuracy</strong>.</li>
+    <li><strong>By upper limit of accuracy</strong>.</li>
+  </ul>
+  <p> </p>
+  <table border="0" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+    <tbody>
+      <tr>
+        <td style="border-width: 0px;border-style: none;border-color: #FFFFFF;border-left-width: 0px;border-left-style: none;border-left-color: #FFFFFF;border-top-width: 0px;border-top-style: none;border-top-color: #FFFFFF;border-right-width: 0px;border-right-style: none;border-right-color: #FFFFFF;border-bottom-width: 0px;border-bottom-style: none;border-bottom-color: #FFFFFF"><img class="ns" height="54" src="assets/images/image.png" width="55" /></td>
+        <td style="border-width: 0px;border-style: none;border-color: #FFFFFF;border-left-width: 0px;border-left-style: none;border-left-color: #FFFFFF;border-top-width: 0px;border-top-style: none;border-top-color: #FFFFFF;border-right-width: 0px;border-right-style: none;border-right-color: #FFFFFF;border-bottom-width: 0px;border-bottom-style: none;border-bottom-color: #FFFFFF"><strong><span style="color:#164a96;"><span style="font-size:1rem">Several parameters can be selected simultaneously in the by type, by AVC status  fields. Please see picture below.</span></span></strong></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p style="text-align: center"><img height="953" src="assets/images/image400.png" width="95%" /></p>
+  <p> </p>
+  <p>For the <strong>AVC </strong>option for each issue, the AVC status is displayed in the corresponding column. It indicates whether the issue is True Positive (TP) or False Positive (FP) as assessed by Maverix. In addition, the probability of the assessment provided by Maverix for the issue is displayed next to the issue status. The probability is displayed as a number in a blue circle near the TP or FP abbreviation: <img alt="image173.png" class="ns" src="assets/images/image199.png" /> (in this example, Maverix says that this issue is True Positive issue with a 73 percent probability).</p>
+  <p> </p>
+  <p style="text-align: center"><img height="837" src="assets/images/image401.png" width="95%" /></p>
+  <p style="text-align: center"> </p>
+</body>
+</html>

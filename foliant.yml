@@ -1,0 +1,28 @@
+title: foliant
+
+chapters:
+  - index.md
+  - ХТПМ:
+    - html.html
+
+
+backend_config:
+  pandoc:
+    params:
+      # pdf_engine: xelatex
+      listings: false
+      number_sections: false
+    vars:
+      lang: ru
+
+  mkdocs:
+    mkdocs_path: mkdocs
+    slug: my_awesome_project
+    use_title: true
+    use_chapters: true
+    use_headings: true
+    default_subsection_title: Expand
+    mkdocs.yml:
+      site_name: Custom Title
+      site_url: http://example.com
+      site_author: John Smith

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Security Defects</title>
+    <meta name="generator" content="Adobe RoboHelp 2020"/>
+    <link rel="stylesheet" href="assets/css/default.css"/>
+    <link rel="stylesheet"/>
+  </head>
+  <body>
+    <div>
+      <h3 data-list-level="4">Security Defects</h3>
+      <p>Usually, the AST tool generates tens or even hundreds of warnings about security issues. Not all of these issues are unique and really important for the application security. A Security Engineer needs to analyze security issues and form application security technical debt based on the security testing results. The outcome of the security issues analysis is a list of security defects submitted into the project Defect Tracking System.</p>
+      <p>Vulnerabilities discovered by AST tools during a scan are called security issues.</p>
+      <p>Vulnerabilities submitted to the Defect Tracking System (e.g., Jira) are called security defects.</p>
+      <p>There are several major differences between security issues and defects:</p>
+      <div style=" margin-left: 0;">
+        <ul class="Disc">
+          <li>Security issues are detected and documented using AST tools. Security Engineer assigns defect status to a security issue when it is entered into the Defect Tracking System.</li>
+          <li>Security issues are stored in AST tools and imported into Maverix. Security defects are created in Maverix and exported to the Defect Tracking System (e.g., Jira).</li>
+          <li>Security defects are created based on security issues. One security defect can include several security issues. This decision should be made by the Security Engineer based on the analysis results.</li>
+        </ul>
+      </div>
+      <p>Select an application and click the <strong>Show app details</strong> <img alt="image282.png" class="ns" src="assets/images/image244.png"/> button in the bottom right of its card to create a new security defect in Maverix.</p>
+      <p> </p>
+      <p style="text-align: center"><img height="762" src="assets/images/image417.png" width="95%"/></p>
+      <p> </p>
+      <p>Select the <strong>Issues</strong> menu item on the left. Click the <strong>Show filters</strong> <img alt="image287.png" class="ns" height="24" src="assets/images/image246.png" width="40"/> button at the top right. On the <strong>Filters</strong> tab, select one of types of security issues in the <strong>by type </strong>field<strong> </strong>(SAST, DAST, SCA Compliance or SCA Security), and the <strong>To verify</strong> status in the by status field.</p>
+      <p>Select the security issues that will be used to create the defect. Use the checkboxes <img alt="image285.png" class="ns" height="18" src="assets/images/image247.png" width="20"/> to the left of the security issue ID for selection. Selected issues will be marked with the <img alt="image267.png" class="ns" height="13.9" src="assets/images/image248.png" width="13.9"/> checkbox. Once selected, the <strong>Open defect</strong> <img alt="image264.png" class="ns" height="30.4" src="assets/images/image249.png" width="50.9"/> button in the top right corner becomes active. Next to it, you will see the number of security issues associated with the defect being created.</p>
+      <p> </p>
+      <p style="text-align: center"><img height="727" src="assets/images/image419.png" width="95%"/></p>
+      <p> </p>
+      <p>Click the <strong>Open defect</strong> button to create a new security defect. The window with information about the defect being created appears. This window has two tabs: <strong>Description</strong> and <strong>Linked issues</strong>. The <strong>Description</strong> tab contains a detailed description of the security defect, while the <strong>Linked issues</strong> tab contains a list of the security issues associated with the defect with their total number.</p>
+      <p> </p>
+      <p style="text-align: center"><img height="985" src="assets/images/image420.png" width="95%"/></p>
+      <p style="text-align: center"> </p>
+      <p>Let&#39;s look at the <strong>Description</strong> tab in more detail. This tab contains details on the security defect being created (required fields are marked with an asterisk):</p>
+      <div style=" margin-left: 0;">
+        <ul class="Disc">
+          <li>Brief defect description in the <strong>Summary</strong> field.</li>
+        </ul>
+      </div>
+      <ul>
+        <li>Information from AST tool: file name, source code line number, call stack for security issue(s), risk, cause, and general recommendations.</li>
+      </ul>
+      <div style=" margin-left: 0;">
+        <ul class="Disc">
+          <li>Defect <strong>Priority</strong> (Blocker, Critical, Major, Minor, Info) indicates the importance or urgency of fixing this defect.</li>
+          <li>Defect <strong>Severity</strong> (Low, Medium, High, Critical) is the degree to which the defect affects the development or operation of an application. The higher the defect severity, the more negative impact it has on the application.</li>
+          <li>Defect <strong>Status</strong> shows the current stage of the defect life cycle in Maverix (Registered, Open). These Maverix defect statuses should be mapped to defect statuses in Jira, for more information, see the &quot;<a data-xref="{title}" href="Sync_with_Jira.htm">Sync with Jira</a>&quot; section.</li>
+          <li>Defect <strong>Source</strong> can be one of the following:
+            <ul class="Square">
+              <li><strong>Manual</strong>: the defect was found during manual testing.</li>
+              <li><strong>Tool</strong>: the defect was detected with the AST tool.</li>
+              <li><strong>Public </strong><strong>source</strong>: the defect was reported in an Internet article or any other public report.</li>
+              <li><strong>External </strong><strong>source</strong>: the defect was reported by any external source as part of the Bug Bounty program or any other loyalty program.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div style=" margin-left: 0;">
+        <ul class="Disc">
+          <li>AST <strong>Tool</strong> that found the defect.</li>
+          <li>Defect <strong>Type</strong> (Requirements, Architecture, Software, Configuration, Security). In this example, it’s the software defect.</li>
+          <li>The <strong>Detection stage</strong> displays the stage at which the defect was detected. It can be selected from the following list: Development, Functional Testing, Integration Testing, User Acceptance Testing, and Production. In this example, it’s the Development stage (DEV).</li>
+          <li>The <strong>Structure unit</strong> to which the defect belongs (None, Front-end, Back-end, Database).</li>
+        </ul>
+      </div>
+      <p>Enter/edit defect information and click the <strong>Save</strong> button at the top right of the defect information window.</p>
+      <p> </p>
+      <p style="text-align: center"><img height="895" src="assets/images/image421.png" width="95%"/></p>
+      <p> </p>
+      <p>All security issues linked to the defect get <strong>Open</strong> status. Also, a new security defect with <strong>Open</strong> status is created. Select the <strong>Defects</strong> menu item on the left to see the newly created security defect on the application defects page.</p>
+      <p>It’s possible to delete a created security defect in Maverix. Select the <strong>Defects</strong> menu item. Open the window of the created security defect, click the <strong>Actions</strong> <img alt="image256.png" class="ns" height="18" src="assets/images/image253.png" width="30"/> button and select the <strong>Delete</strong> item. Once confirmed, the defect will be deleted.</p>
+      <p> </p>
+      <p style="text-align: center"><img height="904" src="assets/images/image422.png" width="95%"/></p>
+      <p> </p>
+      <p>It’s possible to unlink the defect and security issues associated with it. Open the window of the created defect, click the <strong>Actions</strong> <img alt="image256.png" class="ns" height="18" src="assets/images/image255.png" width="30"/> button, and select the <strong>Unlink issues</strong> item in the menu. Once confirmed, all links will be deleted.</p>
+      <p> </p>
+      <p style="text-align: center"><img height="157" src="assets/images/image423.png" width="30%"/></p>
+      <p style="text-align: center"> </p>
+    </div>
+  </body>
+</html>

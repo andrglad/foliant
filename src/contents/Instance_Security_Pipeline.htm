@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Instance Security Pipeline</title>
+    <meta name="generator" content="Adobe RoboHelp 2020"/>
+    <link rel="stylesheet" href="assets/css/default.css"/>
+    <link rel="stylesheet"/>
+  </head>
+  <body>
+    <div>
+      <h3 data-list-level="4">Instance Security Pipeline</h3>
+      <p>Application instances are important from an application development perspective. Application instances are targeted for test stands, staging and production environments. Automated tests can be run for deployed application instances. Maverix supports DevSecOps pipelines of application instances.</p>
+      <p>Select the application on the Applications page and click the <strong>Development</strong> menu item on the left. Cards of application instances are located on the <strong>Instances</strong> tab of the application development page.</p>
+      <p> </p>
+      <p style="text-align: center"><img height="467" src="assets/images/image378.png" width="95%"/></p>
+      <p> </p>
+      <p>There can be multiple instances of an application for different stages (System test, Stage, Production, Integration Acceptance Test, User Acceptance Test) and different configurations for the same development stage.</p>
+      <p>To create an instance security pipeline, select the <strong>DevSecOps</strong> menu item on the left and then click the <strong>+Add new </strong>button at the top right of the <strong>Instance pipelines</strong> tab. Double-click the name of the application instance you want to add in the <strong>Choose the App Instance for pipeline</strong> window that appears.</p>
+      <p> </p>
+      <p style="text-align: center"><img height="543" src="assets/images/image384.png" width="50%"/></p>
+      <p style="text-align: center"> </p>
+      <p>The new instance security pipeline card appears on the <strong>Instance pipelines</strong> tab.</p>
+      <p> </p>
+      <p style="text-align: center"><img height="637" src="assets/images/image385.png" width="95%"/></p>
+      <p style="text-align: center"> </p>
+      <p>Click the Show pipeline config <img alt="image12.png" class="ns" height="20" src="assets/images/image167.png" width="20"/> icon on the pipeline card. The pipeline details page appears. This page contains two warnings because the orchestration and scan tools haven’t been added to the pipeline yet. Click the <strong>Actions </strong><img alt="image4.png" class="ns" height="24" src="assets/images/image168.png" width="40"/> button at the top right and select <strong>Add new element </strong>from the drop-down menu. Select the <strong>CI</strong> item in the window that appears to add the TeamCity orchestration tool to the pipeline, and then enter the tool parameters. Click the <strong>Actions </strong><img alt="image4.png" class="ns" height="24" src="assets/images/image169.png" width="40"/> button at the top right and select the <strong>Add new element</strong> item from the drop-down menu. Select the <strong>DAST tool</strong> in the window that appears to add the scan tool to the pipeline and then enter the parameters for the selected tool.</p>
+      <p>In the <strong>Create DAST scan config</strong> window that appears, select the tool in the Tool field.</p>
+      <p> </p>
+      <p style="text-align: center"><img alt="Maverix" class="b" height="205" src="assets/images/image170.png" width="50%"/></p>
+      <p style="text-align: center"> </p>
+      <p>After selecting the Netsparker tool, the following required fields will appear in this window:</p>
+      <ul class="Disc">
+        <li>Specify the license key in the <strong>License</strong> field.</li>
+        <li>Select the <strong>Scan Profile</strong>.</li>
+      </ul>
+      <p>If necessary, check the <strong>Include &quot;Accepted Risk&quot; and &quot;False Positive&quot; vulnerabilities</strong> item.</p>
+      <p> </p>
+      <p style="text-align: center"><img alt="Maverix" class="b" height="359" src="assets/images/image171.png" width="50%"/></p>
+      <p style="text-align: center"> </p>
+      <p>Click the <strong>DevSecOps </strong>menu item on the left and the edit <img alt="image12.png" class="ns" height="20" src="assets/images/image172.png" width="20"/> button in the right bottom corner of the instance security pipeline card on the <strong>Instances</strong> tab to get the instance pipeline details. The instance pipeline details page appears.</p>
+      <p> </p>
+      <p style="text-align: center"><img alt="image235.png" class="b" src="assets/images/image173.png"/></p>
+      <p style="text-align: center"> </p>
+      <p>A typical instance security pipeline contains three components (represented on the screen as three cards):</p>
+      <div style=" margin-left: 0;">
+        <ul class="Disc">
+          <li>Application instance.</li>
+          <li>Orchestration tool.</li>
+          <li>AST tool.</li>
+        </ul>
+      </div>
+      <p>The instance card represents the instance to be scanned for security issues. To configure the instance parameters, click the edit <img alt="image221.png" class="ns" height="21" src="assets/images/image174.png" width="20"/> button on the instance card. The instance update window appears. See the &quot;<a data-xref="{title}" href="Application_Instances.htm">Application Instances</a>&quot; section for a description of the configuration of the instance parameters.</p>
+      <p>The orchestration tool card represents the corresponding tool for this pipeline (TeamCity). This card allows you to configure the orchestration tool parameters using the edit button <img alt="image221.png" class="ns" height="21" src="assets/images/image175.png" width="20"/> on the tool card, including the node label, as in the case of artifact pipelines.</p>
+      <p>The AST tool card represents the AST tool chosen for this pipeline. For example, Netsparker is a DAST (Dynamic Application Security Testing) tool. Multiple AST tools can be selected for a single pipeline. Click the edit <img alt="image221.png" class="ns" height="21" src="assets/images/image176.png" width="20"/> button on the AST tool card to tune the scanning parameters in the <strong>Update DAST scan config</strong> window.</p>
+      <p>When all the DevSecOps instance pipeline components are configured, click the <strong>Actions </strong><img alt="image4.png" class="ns" height="18" src="assets/images/image177.png" width="30"/> button at the top right of the pipeline details page. Choose the <strong>Export CI/CD</strong> item from the drop-down menu to export the pipeline to the CI/CD orchestration tool.</p>
+      <p>After the successful export to CI/CD, click the <strong>Actions </strong><img alt="image4.png" class="ns" height="18" src="assets/images/image178.png" width="30"/> button and select the Start scan item from the drop-down menu to start the instance security scan. Click the <strong>Start scan</strong> button in the appeared window. The start scan confirmation message appears an the bottom right of the Maverix screen.</p>
+      <p>Select the Scan history tab to check the status of the performed scans.</p>
+      <p> </p>
+    </div>
+  </body>
+</html>

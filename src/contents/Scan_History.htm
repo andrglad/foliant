@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Scan History</title>
+    <meta name="generator" content="Adobe RoboHelp 2020"/>
+    <link rel="stylesheet" href="assets/css/default.css"/>
+    <link rel="stylesheet"/>
+  </head>
+  <body>
+    <h3 data-list-level="4">Scan History</h3>
+    <p>Select the <strong>Scans</strong> tab to get details on the scan results for the selected security pipeline.</p>
+    <p> </p>
+    <p style="text-align: center"><img height="702" src="assets/images/image357.png" width="95%"/></p>
+    <p> </p>
+    <p>Each performed scan is presented as a separate string. The string contains the following fields:</p>
+    <div style=" margin-left: 0;">
+      <ul class="Disc">
+        <li>The scan <strong>ID</strong> in Maverix. Click the value in this column for detailed information about the scan. The following page appears.
+          <br/>
+          <br/>
+          <img height="834" src="assets/images/image358.png" style="cursor: nesw-resize;" width="95%"/>
+          <br/>
+          <br/>
+          This page displays the following information.
+          <ul class="Square">
+            <li><strong>Details</strong>.</li>
+            <li><strong>Scan target</strong>.</li>
+            <li><strong>Quality gate</strong>: information on passing the specified Quality Gate.</li>
+            <li><strong>Quality gate condition violations</strong> — information on exceeding the threshold values defined in the profile of connected Quality Gate.</li>
+            <li><strong>Status</strong>.</li>
+            <li><strong>Started</strong>.</li>
+            <li><strong>Duration</strong>.</li>
+            <li><strong>CI system</strong>.</li>
+            <li><strong>Ext build ID</strong>. Clicking on a value will take you to the corresponding CI / CD tool.</li>
+            <li><strong>Started from</strong> — the method to start scanning.</li>
+            <li><strong>Branch</strong> of code base.</li>
+            <li><strong>Issue import results</strong> — the result of importing Security Issues in the form of a diagram with the distribution by status (New, Repeated, Fixed). There is an icon next to the diagram. Click it to go to the list of security issues detected during this scan. It&#39;s possible to update data on the page (<strong>Refresh data</strong> button).</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div style=" margin-left: 0;">
+      <ul class="Disc">
+        <li><strong>Details</strong> — scan status in the orchestration tool:
+          <ul class="Square">
+            <li><img alt="image149.png" class="ns" height="20.0" src="assets/images/image9.png" width="18.7"/> — SUCCESS.</li>
+            <li><img alt="image126.png" class="ns" height="20.7" src="assets/images/image112.png" width="19.3"/> — FAILURE.</li>
+            <li><span lang="en-US"></span><img alt="Maverix" class="ns" height="18.6" src="assets/images/image113.png" width="18.8"/><span lang="en-US">—</span> <span lang="en-US">BYPASSED.</span></li>
+          </ul>
+        </li>
+      </ul>
+      <p> </p>
+      <table border="0" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+        <colgroup>
+          <col style="width: 90px;"/>
+          <col style="width: 897px;"/>
+        </colgroup>
+        <tbody>
+          <tr>
+            <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><img class="ns" height="54" src="assets/images/image.png" width="55"/></td>
+            <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><strong><span style="color:#164a96;"><span style="font-size:1rem">With Quality Gate set, the scan results from TeamCity and Maverix perspectives can be significantly different. Running a scan in the orchestration tool could be successful, but the criteria defined in QG in terms of security and compliance risks identified may not be met. In this case, the QG Check status in Maverix may be &quot;Failed&quot; and the security pipeline has to be aborted because the QG criteria haven&#39;t been met. For example, after QG criteria aren&#39;t met, the step of deploying the build to the target environment should not be performed. If QG isn’t set and the scan is successfully completed in the CI/CD tool (TeamCity), the scan result in Maverix is defined as &quot;Passed&quot;. The scan status in Maverix from a QG perspective is displayed in the SAST QG, SCA QG, and DAST QG fields.</span></span></strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p> </p>
+      <ul class="Disc">
+        <li><strong>Version</strong> —version of the scanned artifact.</li>
+      </ul>
+    </div>
+    <div style=" margin-left: 0;">
+      <ul class="Disc">
+        <li><strong>Build</strong> — the build version of the scanned artifact. For source code pipelines, this field is called Branch and contains the branch name.</li>
+        <li><strong>Started</strong>.</li>
+        <li><strong>Duration</strong>.</li>
+        <li><strong>SAST QG</strong> — scan status in Maverix in terms of the specified SAST QG. If QG is not set, this field is empty. If QG is set, but criteria specified in QG aren&#39;t met, this field contains the <strong>Failed</strong> <img alt="image126.png" class="ns" height="20.7" src="assets/images/image10.png" width="19.3"/> icon. Click this icon to get detailed information on the scan results.
+          <br/>
+          <br/>
+          <img height="824" src="assets/images/image359.png" style="cursor: nwse-resize;" width="95%"/> </li>
+      </ul>
+      <p> </p>
+      <ul class="Disc">
+        <li>If QG is set, and criteria specified in QG are met, this field will contain the Passed <img alt="image149.png" class="ns" height="20.0" src="assets/images/image114.png" width="18.7"/>.</li>
+      </ul>
+    </div>
+    <div style=" margin-left: 0;">
+      <ul>
+        <li><strong>SCA QG</strong> — scan status in Maverix in terms of the specified SCA QG. If QG is not set, this field is empty. If QG is set, but criteria specified in QG aren&#39;t met, this field contains the Failed <img alt="image126.png" class="ns" height="20.7" src="assets/images/image12.png" width="19.3"/> icon. Click this icon to get detailed information on the results. If QG is set, and criteria specified in QG are met, this field will contain the Passed <img alt="image149.png" class="ns" height="20.0" src="assets/images/image13.png" width="18.7"/>.</li>
+      </ul>
+      <p> </p>
+      <p style="text-align: center"><img alt="image163.png" class="b" src="assets/images/image115.png"/></p>
+      <ul>
+        <li> </li>
+      </ul>
+    </div>
+    <div style=" margin-left: 0;">
+      <ul class="Disc">
+        <li><strong>DAST QG</strong> — scan status in Maverix in terms of the specified DAST QG. If QG is not set, this field is empty. If QG is set, but criteria specified in QG aren&#39;t met, this field contains the Failed <img alt="image126.png" class="ns" height="20.7" src="assets/images/image14.png" width="19.3"/> icon. Click this icon to get detailed information on the results. If QG is set, and criteria specified in QG are met, this field will contain the Passed <img alt="image149.png" class="ns" height="20.0" src="assets/images/image15.png" width="18.7"/>.</li>
+        <li><strong>EXTERNAL ID</strong> — the external scan ID. Clicking on a value will take you to the corresponding CI / CD tool.</li>
+      </ul>
+      <p> </p>
+    </div>
+  </body>
+</html>

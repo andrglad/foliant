@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Manual Verification of Security Defects</title>
+    <meta name="generator" content="Adobe RoboHelp 2020"/>
+    <link rel="stylesheet" href="assets/css/default.css"/>
+    <link rel="stylesheet"/>
+  </head>
+  <body>
+    <div>
+      <h3 data-list-level="4">Manual Verification of Security Defects</h3>
+      <p>Every security defect shall be fixed by the application development team. When the defect is fixed, developers change the security defect status in Jira to &quot;fixed&quot;. The defect now needs to be synchronized between Jira and Maverix.</p>
+      <p>As described above, select an application and click the <strong>Defects</strong> menu item on the left. The application defects page appears. Click the <strong>Sync with tracker</strong> <img alt="image238.png" class="ns" height="17" src="assets/images/image262.png" width="30"/> button at the top right.</p>
+      <p> </p>
+      <p style="text-align: center"><img height="938" src="assets/images/image426.png" width="95%"/></p>
+      <p> </p>
+      <p>Wait for the synchronization to complete successfully. The security defect status in Maverix should now be &quot;Fixed&quot;, just like in Jira.</p>
+      <p>To verify this security defect, Security Engineer runs a security scan, and verifies that the security defect is really fixed (i.e., there’s no corresponding security issue(s) in the latest security report from AST tool), and changes the status of this defect to &quot;closed&quot; in Maverix. After synchronizing defects between Maverix and Jira, this security defect gets the &quot;Closed&quot; status in Jira as well.</p>
+      <p> </p>
+    </div>
+  </body>
+</html>

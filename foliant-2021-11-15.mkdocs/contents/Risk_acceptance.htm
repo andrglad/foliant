@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Risk acceptance</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" />
+</head>
+<body>
+  <h3 data-list-level="4">Risk acceptance</h3>
+  <table border="0" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+    <tbody>
+      <tr>
+        <td style="border-width: 0px;border-style: none;border-color: #FFFFFF;border-left-width: 0px;border-left-style: none;border-left-color: #FFFFFF;border-top-width: 0px;border-top-style: none;border-top-color: #FFFFFF;border-right-width: 0px;border-right-style: none;border-right-color: #FFFFFF;border-bottom-width: 0px;border-bottom-style: none;border-bottom-color: #FFFFFF"><img class="ns" height="54" src="assets/images/image.png" width="55" /></td>
+        <td style="border-width: 0px;border-style: none;border-color: #FFFFFF;border-left-width: 0px;border-left-style: none;border-left-color: #FFFFFF;border-top-width: 0px;border-top-style: none;border-top-color: #FFFFFF;border-right-width: 0px;border-right-style: none;border-right-color: #FFFFFF;border-bottom-width: 0px;border-bottom-style: none;border-bottom-color: #FFFFFF"><strong><span style="color:#164a96;"><span style="font-size:1rem"><span style="color:#164a96;"><span style="font-size:1rem">The Security Engineer role is required to perform the actions described below. This functionality is not available for other roles in Maverix.</span></span></span></span></strong></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Some components (e.g., open-source libraries) used in application development may not have secure versions. In such a situation, as a result of management decisions, Security Engineers can allow using of such components, accepting appropriate risks, by adding security issues to the exceptions. Eventually, Maverix doesn&#39;t take this vulnerability into account when checking QG. Thus, there is a deliberate refusal to use certain security criteria or policies for vulnerabilities added to the exceptions.</p>
+  <p>Maverix provides a mechanism for adding detected Security Issues to exceptions. In practice, by adding a security issue to exceptions (by assigning it an Accepted Risk status), Security Engineer equates such a vulnerability with a false positive. In other words, the presence of a vulnerability added through this mechanism to exceptions is considered acceptable and is not a blocking factor when, for example, making a final decision on whether a release is ready to be deployed into production. Currently, the <strong>Accepted Risk</strong> status can only be assigned to vulnerabilities detected by SCA tools (e.g., Clair and Nexus IQ).</p>
+  <p>Note that adding vulnerabilities to exceptions is implemented in one form or another in many tools. For more information, please, refer to the documentation of respective products. It&#39;s important to emphasize that the information exchange on Security Issues between Maverix and many tools is two-way. For example, once the status in Maverix changes, the status in a Nexus IQ report changes, too.</p>
+  <p>If some vulnerability is waived in the SCA tool, it receives the <strong>Accepted risk</strong> status when imported into Maverix.</p>
+  <p>If the application includes a proxy repository and the vulnerability is added to exceptions and the &quot;Autowaive True&quot; comment is added to the exception, an acceptance rule is created when the vulnerabilities are imported into Maverix and displayed on the <strong>Rules</strong> tab of the <strong>Risk Acceptance</strong> page.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="837" src="assets/images/image402.png" width="95%" /></p>
+  <p> </p>
+  <p>The following information is displayed for every rule:</p>
+  <ul class="Disc">
+    <li>The <strong>ID</strong> is a rule identifier in the system.</li>
+    <li>The <strong>ISSUE TYPE</strong> is a type of Security Issue.</li>
+    <li>The <strong>LIBRARY</strong> is a used library.</li>
+    <li>The <strong>CVE</strong> is a link to the description in the Common Vulnerabilities and Exposures database.</li>
+    <li>The <strong>IS OBSOLETE</strong> is a rule status (is obsolete/active).</li>
+    <li>The <strong>CREATED</strong> is a date and time of rule creation.</li>
+    <li>The <strong>EXPIRED</strong> is a rule validity period.</li>
+  </ul>
+  <p>There is the <img class="ns" height="24" src="assets/images/image202.png" width="20" /> icon to the right of every rule. Click this icon to delete the rule.</p>
+  <p>If a subsequent scan of a codebase or artifact detects a vulnerability with the same name, version and severity value,, it will automatically be assigned the <strong>Accepted risk</strong> status based on the previously created rule. This approach avoids the time-consuming task of repeatedly changing the status from <strong>To verify</strong> to <strong>Accepted risk</strong> for similar Security Issues. Once a risk has been determined as acceptable, there is no need to change the status manually in the future.</p>
+  <p>Maverix imports comments from tools. Therefore, you can see the reason for being assigned Accepted Risk status in the <strong>Comments</strong> tab of the relevant Security Issue.</p>
+  <p>In turn, if the <strong>Accepted Risk</strong> status is specified for a vulnerability in Maverix, a request is also sent to the tool (e.g., Nexus IQ) to change the status of the corresponding vulnerability (e.g., in the case of Nexus IQ, the vulnerability will receive the <strong>waived</strong> status).</p>
+  <p>The system implements two types of risk acceptance mechanisms: unconditional and conditional. In the case of an unconditional risk acceptance, Security Engineer unconditionally admits the presence of a certain vulnerability, and it isn&#39;t taken into account when calculating Quality Gates. In the second case, as the name implies, the risk is accepted with a certain condition. Similar to the first case, a vulnerability is also considered acceptable, and its existence isn&#39;t taken into account when QG calculating, but until the defined condition (rule) is met—no vulnerabilities described by this rule were found in a source code (see the &quot;<a href="../AAG/Issue_Categories.htm">Issue Categories</a>&quot; section of the Application Administrator Guide). The term mitigation is often used for conditional risk acceptance.</p>
+  <p>Let us illustrate the above with the following example. Suppose you need to allow the use of a library in which SCA tools have detected a vulnerability, but only if the SAST tool does not find a vulnerability of a certain type in the source code, such as All_Passwords. Thus, a Security Engineer accepts a corresponding risk, realizing that the overall library vulnerability is due to the presence of particular unsafe methods or functions in it, and restricting their use (by setting a certain condition). At the same time, as soon as the use of unsafe methods or functions is detected by the SAST tool (the All_Passwords condition in our example is violated), the SCA-related vulnerability with Accepted Risk status will be taken into account when calculating Quality Gate.</p>
+  <p>The required rule is created in Maverix (practical implementation is described below), see the <strong>Risk accepted</strong> block in the figure below. According to it, this vulnerability is considered when Quality Gate calculating, only if a SAST vulnerability of the All_Passwords type (the <strong>Condition</strong> field) is detected during a Maverix scan.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="907" src="assets/images/image404.png" width="95%" /></p>
+  <p> </p>
+  <p>Open the Security Issue description page (see the &quot;<a data-xref="{title}" href="Security_Issues.htm">Security Issues</a>&quot; section), click the <strong>Actions</strong> <img alt="image166.png" class="ns" height="18" src="assets/images/image204.png" width="30" /> button in the right upper corner, and select the <strong>Accept risk</strong> item from the drop-down menu to designate Security Issue as the Accepted Risk in Maverix.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="827" src="assets/images/image405.png" width="95%" /></p>
+  <h4 data-list-level="5"><a id="Unconditional_Risk_Acceptance"></a>Unconditional Risk Acceptance</h4>
+  <p>To accept the risk without any conditions and exclude such vulnerability from the Quality Gate calculation, in the <strong>Accept the risk</strong> window that appears, it&#39;s enough to specify both the rule expiration date (the <b><strong>Expiration Date</strong></b> field) and the reason in the <strong>Comment</strong> field, and click the Accept button.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="549" src="assets/images/image406.png" width="45%" /></p>
+  <p style="text-align: center"> </p>
+  <p>The confirmation message appears in the bottom right corner of the user interface, and the <strong>Risk Accepted</strong> section containing brief information about the rule created appears in the right column of the <strong>Details</strong> tab:</p>
+  <div style=" margin-left: 0;">
+    <ul class="Disc">
+      <li>The <strong>Acceptor</strong> is login of the user who accepted the risk.</li>
+      <li>The <strong>Accepted at</strong> is a date and time of rule creation.</li>
+      <li>The <strong>Expired at</strong> is a rule expiration date.</li>
+      <li><strong>Comment</strong>.</li>
+    </ul>
+    <p> </p>
+    <p style="text-align: center"><img height="987" src="assets/images/image407.png" style="cursor: nwse-resize;" width="95%" /></p>
+  </div>
+  <h4 data-list-level="5">Conditional Risk Acceptance</h4>
+  <p>Conditional risk acceptance is performed similarly to unconditional one (see the &quot;<a href="#Unconditional_Risk_Acceptance">Unconditional Risk Acceptance</a>&quot; section above), with the difference that the <strong>With condition</strong> option must be selected in the <strong>Accept the risk</strong> window.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="543" src="assets/images/image408.png" width="50%" /></p>
+  <p> </p>
+  <p>Then in the drop-down menu of the <strong>Considered SAST category</strong> field, select the required condition.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="545" src="assets/images/image409.png" width="50%" /></p>
+  <p style="text-align: center"> </p>
+  <p>Specify the expiration date for the rule to be created in the <strong>Expiration Date</strong> field.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="957" src="assets/images/image410.png" width="95%" /></p>
+  <p> </p>
+  <p>The <strong>Comment</strong> field is also required. Click the <strong>Accept</strong> button. The confirmation message is displayed in the bottom right corner of the user interface, and the corresponding rule is created in the system. If a risk is conditionally accepted, an additional <strong>Condition</strong> field appears in the <strong>Risk accepted</strong> section, indicating the selected condition.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="1014" src="assets/images/image411.png" width="95%" /></p>
+  <h4 data-list-level="5">Information on vulnerabilities designated as Accepted Risk</h4>
+  <p>Information on vulnerabilities designated as Accepted Risk is displayed on the <strong>Risk Acceptance</strong> page.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="888" src="assets/images/image412.png" width="95%" /></p>
+  <p> </p>
+  <p>The following information is displayed for each Security Issue with the Accepted Risk status:</p>
+  <ul class="Disc">
+    <li>The <strong>ID</strong> is an identification number of a rule created in Maverix.</li>
+    <li>The <strong>ISSUE ID</strong> is a Security Issue identification number.</li>
+    <li>The <strong>ISSUE TYPE</strong> is a type of Security Issue.</li>
+    <li>The <strong>CONDITIONAL SAST CATEGORY</strong> is a SAST category (condition) used in the case of conditional risk acceptance.</li>
+    <li>The <strong>ACCEPTED</strong> is a date and time of the creation of the corresponding rule.</li>
+    <li>The <strong>ACCEPTOR</strong> is a user login of the user who created the corresponding rule.</li>
+  </ul>
+  <p> </p>
+</body>
+</html>

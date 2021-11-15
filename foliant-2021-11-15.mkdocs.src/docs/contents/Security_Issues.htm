@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Security Issues</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" />
+</head>
+<body>
+  <h3 data-list-level="4">Security Issues</h3>
+  <p>Each AST tool creates a security report during each scan. This is part of the security pipeline work. The security report contains a list of issues found during the security scan. Work with the security report should be started with importing issues from AST tools to Maverix. Although security issues are automatically imported after a scan, it is possible to perform it manually using the Maverix user interface.</p>
+  <p>Select the <strong>Applications</strong> menu item at the top left of the Maverix user interface. The applications page appears on the screen. Click the <strong>Show app details</strong> button at the bottom right of the application card.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="756" src="assets/images/image386.png" width="95%" /></p>
+  <p> </p>
+  <p>Select the <strong>Issues</strong> menu item and click the <strong>Import issues</strong> <img alt="image197.png" class="ns" height="17" src="assets/images/image182.png" width="30" /> button at the top right to import issues from AST tools.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="778" src="assets/images/image387.png" width="95%" /></p>
+  <p> </p>
+  <p>The <strong>Import started</strong> confirmation appears at the bottom right. When the import is complete, the imported issues will appear on the screen. In the example shown above, the issues were detected as a result of running the SAST tool. It’s possible to set up auto import of security issues from AST tool in Maverix security pipeline, for more information, see the &quot;<a href="Security_pipeline_settings.htm">Artifact Security Pipeline</a>&quot; section.</p>
+  <p>The total number of currently open security issues (not yet fixed) is shown to the right of the <strong>Issues</strong> menu item.</p>
+  <p>Each issue is presented as a separate line containing a brief description of the issue in the following columns:</p>
+  <div style=" margin-left: 0;">
+    <ul class="Disc">
+      <li>The issue <strong>Id</strong> in the AST tool.</li>
+      <li>The issue <strong>Type</strong> (SAST, DAST, SCA Compliance, SCA Security).</li>
+      <li>The issue <strong>Source</strong> is the filename for SAST issues or the component name and version for SCA issues.</li>
+      <li>The issue <strong>Category</strong> type (e.g. Potential_SQL_Injection for SAST issues, etc.).</li>
+      <li>The issue <strong>Status</strong> in the AST tool (To Verify, Reviewed, Open, Fixed, False Positive).</li>
+      <li>The issue <strong>Severity</strong> in the AST tool (Low, Medium, High, Critical).</li>
+      <li>The issue <strong>CWE</strong> (Common Weakness Enumeration), if applicable. CWE is a community-developed list of software and hardware weakness types. It serves as a common language, a measuring stick for security tools, and as a baseline for weakness identification, mitigation, and prevention efforts.</li>
+      <li><strong>Defect</strong> is a link to a corresponding security defect.</li>
+    </ul>
+  </div>
+  <p>All this information about the security issues is imported to Maverix from AST tools.</p>
+  <p>Click security issue ID to start the work. A page with detailed information about the issue appears. This page contains five tabs.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="780" src="assets/images/image388.png" width="95%" /></p>
+  <p> </p>
+  <ul class="Disc">
+    <li>The <strong>Details</strong> tab contains detailed information about the issue with an indication of the potential hazard, its cause, and recommendations for its elimination. In addition, you can see the results of AVC analysis in the AVC Status and AVC Accuracy fields. For more information, see the &quot;<a href="../AAG/Issue_Categories.htm">Issue Categories</a>&quot; section of the Application Administrator Guide.</li>
+    <li>The <strong>Path</strong> tab contains information that helps to find the root of the issue.</li>
+  </ul>
+  <p> </p>
+  <p style="text-align: center"><img height="760" src="assets/images/image390.png" width="95%" /></p>
+  <p> </p>
+  <ul class="Disc">
+    <li>The <strong>Status history</strong> tab contains information about each occurrence of this issue during the security scans performed. This tab contains information on every issue detected during the security scans. You can also track the history vulnerability statuses here (the <strong>Old Status</strong> and <strong>New status</strong> fields). The status update is only displayed if it has actually changed. For instance, if a scan was carried out, but the security issue status has not changed, only the date is updated.</li>
+  </ul>
+  <p> </p>
+  <p style="text-align: center"><img height="650" src="assets/images/image391.png" width="95%" /></p>
+  <p style="text-align: center"> </p>
+  <ul class="Disc">
+    <li>The <strong>Import Task Id</strong> field is automatically filled in when importing from any tool. The <strong>Scan Task Id</strong> field is automatically filled in according to the scan results.</li>
+    <li>The <strong>Comments</strong> and <strong>Recommendation</strong> tabs allow you to add some comments and recommendations to the issue. They will be saved after clicking the <strong>Send</strong> button on the <strong>Comments</strong> tab or the <strong>Save</strong> button on the <strong>Recommendation</strong> tab. If similar problems are found on subsequent scans, all saved recommendations will automatically be added to such issues. This functionality is implemented in Maverix based on the issue correlation analysis.</li>
+  </ul>
+  <p> </p>
+  <p style="text-align: center"><img height="760" src="assets/images/image392.png" width="95%" /></p>
+  <p> </p>
+  <p>Maverix tracks the history of issues. If a previously detected issue isn’t found during the next security scan, it automatically gets the &quot;fixed&quot; status.</p>
+  <p>Click the link to the AST tool in the <strong>Found by</strong> field on the right side of the <strong>Details</strong> tab. The AST tool login page appears. Enter your login and password to view and, if necessary, update the security issue in the AST tool. It’s not possible to update security issues directly in Maverix. If security issues have been updated in the AST tool, it’s necessary to import this update into Maverix. Click the <strong>Import issues</strong> <img alt="image209.png" class="ns" height="18" src="assets/images/image188.png" width="30" /> button to import the updated issues.</p>
+  <p>Information on security issues can be exported as a report in XLSX (MS Excel) or PDF (Adobe Acrobat) formats. Open the security issues list, see above in this section. Click the <strong>Export Issues</strong> <img alt="image201.png" class="ns" height="18" src="assets/images/image189.png" width="30" /> button in the upper right corner.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="778" src="assets/images/image393.png" width="95%" /></p>
+  <p> </p>
+  <p>Select the required format (XLSX or PDF) from the drop-down menu and click the corresponding menu item. A confirmation message appears in the bottom right corner, and after a few seconds, the report file will be downloaded in the selected format.</p>
+  <p>Without going into the structure of the reports, it&#39;s worth noting that they contain links to vulnerabilities detected by Sonatype products (<strong>CVE id</strong>), as well as to non-vulnerable versions of libraries (<strong>Non-vulnerable versions</strong>), among other things.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="863" src="assets/images/image394.png" width="95%" /></p>
+  <p style="text-align: center"> </p>
+  <table border="0" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+    <tbody>
+      <tr>
+        <td style="border-width: 0px;border-style: none;border-color: #FFFFFF;border-left-width: 0px;border-left-style: none;border-left-color: #FFFFFF;border-top-width: 0px;border-top-style: none;border-top-color: #FFFFFF;border-right-width: 0px;border-right-style: none;border-right-color: #FFFFFF;border-bottom-width: 0px;border-bottom-style: none;border-bottom-color: #FFFFFF"><img class="ns" height="54" src="assets/images/image.png" width="55" /></td>
+        <td style="border-width: 0px;border-style: none;border-color: #FFFFFF;border-left-width: 0px;border-left-style: none;border-left-color: #FFFFFF;border-top-width: 0px;border-top-style: none;border-top-color: #FFFFFF;border-right-width: 0px;border-right-style: none;border-right-color: #FFFFFF;border-bottom-width: 0px;border-bottom-style: none;border-bottom-color: #FFFFFF"><strong><span style="color:#164a96;"><span style="font-size:1rem">If any filters are applied to the security issues list, they are taken into account when generating the report.</span></span></strong></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p style="text-align: left">For example, if you need to generate a report containing security issues in descending order of severity, apply the <strong>Severity: filter: High to Low</strong> and generate the report.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="780" src="assets/images/image395.png" style="cursor: nwse-resize;" width="95%" /></p>
+  <p style="text-align: center"> </p>
+  <p> </p>
+</body>
+</html>

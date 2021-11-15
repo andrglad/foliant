@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>General parameters of the scan_codebase.py and scan_artifact.py scripts</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" />
+</head>
+<body>
+  <h2>General parameters of the scan_codebase.py and scan_artifact.py scripts</h2>
+  <table border="0" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+    <tbody>
+      <tr>
+        <td style="border-width: 0px;border-style: none;border-color: #FFFFFF;border-left-width: 0px;border-left-style: none;border-left-color: #FFFFFF;border-top-width: 0px;border-top-style: none;border-top-color: #FFFFFF;border-right-width: 0px;border-right-style: none;border-right-color: #FFFFFF;border-bottom-width: 0px;border-bottom-style: none;border-bottom-color: #FFFFFF"><img class="ns" height="54" src="assets/images/image.png" width="55" /></td>
+        <td style="border-width: 0px;border-style: none;border-color: #FFFFFF;border-left-width: 0px;border-left-style: none;border-left-color: #FFFFFF;border-top-width: 0px;border-top-style: none;border-top-color: #FFFFFF;border-right-width: 0px;border-right-style: none;border-right-color: #FFFFFF;border-bottom-width: 0px;border-bottom-style: none;border-bottom-color: #FFFFFF"><strong><span style="color:#164a96;"><span style="font-size:1rem">Correct completion of these scripts is possible only if all required parameters are specified.</span></span></strong></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <table class="noborder">
+    <colgroup>
+      <col span="4" />
+      <col span="4" />
+      <col span="4" />
+      <col span="4" />
+    </colgroup>
+    <tbody>
+      <tr class="rh-cursor-row" style="font-size: 1.1rem;">
+        <th style="background-color: #164A96;color: #FFFFFF">Parameter</th>
+        <th style="text-align: center;background-color: #164A96;color: #FFFFFF">Required parameter</th>
+        <th style="background-color: #164A96;color: #FFFFFF">Description</th>
+        <th style="background-color: #164A96;color: #FFFFFF">Example</th>
+      </tr>
+      <tr style="font-size: 1.1rem;">
+        <td rowspan="2"><code>--url</code></td>
+        <td rowspan="2" style="text-align: center">+</td>
+        <td rowspan="2">Maverix URL</td>
+        <td rowspan="2"><code>--url https://hub.demo.maverix.co</code></td>
+      </tr>
+      <tr style="font-size: 1.1rem;">
+      </tr>
+      <tr style="font-size: 1.1rem;">
+        <td rowspan="2"><code>--token</code></td>
+        <td rowspan="2" style="text-align: center">+</td>
+        <td rowspan="2">Maverix authorization token</td>
+        <td rowspan="2"><code>--token &lt;token&gt;</code></td>
+      </tr>
+      <tr style="font-size: 1.1rem;">
+      </tr>
+      <tr style="font-size: 1.1rem;">
+        <td rowspan="2"><code>--appcode</code></td>
+        <td rowspan="2" style="text-align: center">+</td>
+        <td rowspan="2">Application code in the Maverix database</td>
+        <td rowspan="2"><code>--appcode dvja</code></td>
+      </tr>
+      <tr style="font-size: 1.1rem;">
+      </tr>
+      <tr style="font-size: 1.1rem;">
+        <td rowspan="2"><code>--tagged-artifact</code></td>
+        <td rowspan="2" style="text-align: center">–</td>
+        <td rowspan="2">Artifact tagged as a result of the scan. Required parameter if the corresponding action is added to the security pipeline, otherwise ignored</td>
+        <td rowspan="2"><code>--tagged-artifact https://nexus.dev.maverix.co/<br/>
+			repository/maven-releases/com/appsecco/dvja/1.0/dvja-1.0.war</code></td>
+      </tr>
+      <tr style="font-size: 1.1rem;">
+      </tr>
+      <tr style="font-size: 1.1rem;">
+        <td rowspan="2"><code>--insecure</code></td>
+        <td rowspan="2" style="text-align: center">–</td>
+        <td rowspan="2">It disables security checks (such as checking SSL certificates). By default: enabled</td>
+        <td rowspan="2"><code>--insecure</code></td>
+      </tr>
+      <tr style="font-size: 1.1rem;">
+      </tr>
+      <tr style="font-size: 1.1rem;">
+        <td rowspan="2"><code>--no-wait</code></td>
+        <td rowspan="2" style="text-align: center">–</td>
+        <td rowspan="2">If this parameter is specified, CLI doesn&#39;t wait for the scan completion</td>
+        <td rowspan="2"><code>--no-wait</code></td>
+      </tr>
+      <tr style="font-size: 1.1rem;">
+      </tr>
+      <tr style="font-size: 1.1rem;">
+        <td rowspan="2"><code>--debug</code></td>
+        <td rowspan="2" style="text-align: center">–</td>
+        <td rowspan="2">If this parameter is specified, &quot;log level&quot; is DEBUG. By default, &quot;log level&quot; — INFO</td>
+        <td rowspan="2"><code>--debug</code></td>
+      </tr>
+      <tr style="font-size: 1.1rem;">
+      </tr>
+      <tr style="font-size: 1.1rem;">
+        <td rowspan="2"><code>--error</code></td>
+        <td rowspan="2" style="text-align: center">–</td>
+        <td rowspan="2">If this parameter is specified, &quot;log level&quot; is ERROR. By default, &quot;log level&quot; — INFO</td>
+        <td rowspan="2"><code>--error</code></td>
+      </tr>
+      <tr style="font-size: 1.1rem;">
+      </tr>
+      <tr style="font-size: 1.1rem;">
+        <td rowspan="2"><code>--result-file</code></td>
+        <td rowspan="2" style="text-align: center">–</td>
+        <td rowspan="2">It defines the name and location of the JSON file with scan results*</td>
+        <td rowspan="2"><code>--result-file ./result.json</code></td>
+      </tr>
+      <tr style="font-size: 1.1rem;">
+      </tr>
+      <tr style="font-size: 1.1rem;">
+        <td rowspan="2"><code>--unit</code></td>
+        <td rowspan="2" style="text-align: center">–</td>
+        <td rowspan="2">It establishes a mapping between the artifact/codebase and the application instance. If the entity doesn&#39;t exist, it&#39;s created</td>
+        <td rowspan="2"><code>--unit Front</code></td>
+      </tr>
+      <tr style="font-size: 1.1rem;">
+      </tr>
+      <tr style="font-size: 1.1rem;">
+        <td rowspan="2"><code>--external-id</code></td>
+        <td rowspan="2" style="text-align: center">–</td>
+        <td rowspan="2">External id of the new application. If the application exists, the parameter will be skipped</td>
+        <td rowspan="2"><code>--external-id new-app-external-id</code></td>
+      </tr>
+      <tr style="font-size: 1.1rem;">
+      </tr>
+      <tr style="font-size: 1.1rem;">
+        <td rowspan="2"><code>-v</code></td>
+        <td rowspan="2" style="text-align: center">–</td>
+        <td rowspan="2">The script version</td>
+        <td rowspan="2"><code>-v</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br />
+    * see the &quot;<a data-xref="{title}" href="Appendix_3._Scan_results.htm">Appendix 3. Scan results</a> section&quot;.</p>
+  <p> </p>
+</body>
+</html>

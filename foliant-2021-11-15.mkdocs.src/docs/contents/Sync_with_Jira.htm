@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="generator" content="Adobe RoboHelp 2020"/>
+    <title>Sync with Jira</title>
+    <meta name="topic-status" content="Draft"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/default.css"/>
+  </head>
+  <body>
+    <h3>Sync with Jira</h3>
+    <div data-conref="assets/snippets/Manager_role.hts"> </div>
+    <p> </p>
+    <p>Each defect in Maverix has a status that shows its current stage in the defect life cycle (Registered, Open, In Progress, Fixed, Rejected, Closed). On the other hand, the defect also has its status in Jira. The defect life cycle and the list of defect statuses in Jira are defined by the development team depending on their own workflow. For example, the development team can use the Kanban approach, which has its own defect lifecycle with customized defect statuses. Thus, the lists of defect statuses in Jira and Maverix are different. Therefore, the defect statuses in Maverix should be mapped to the defect statuses in Jira.</p>
+    <p>The mapping of defect statuses between Maverix and Jira should be defined in Maverix for each application.</p>
+    <p>Select the <strong>Applications</strong> menu item at the top left of the Maverix user interface. The applications page appears.</p>
+    <p> </p>
+    <p style="text-align: center"><img height="766" src="assets/images/image414.png" width="95%"/></p>
+    <p> </p>
+    <p>Select the application. Select the <strong>Defect tracking</strong> menu item on the left.</p>
+    <p>It is possible to copy all the defect tracking settings from another application in Maverix. To do this, click the <strong>Actions</strong> <img alt="image78.png" class="ns" height="17" src="assets/images/image215.png" width="30"/> button at the top right of the <strong>Defect Tracking</strong> page and select the Copy config from another app item from the drop-down menu. Select the required application from the list in the Copy from an application window that appears.</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="image82.png" class="b" height="409" src="assets/images/image216.png" width="65%"/></p>
+    <p style="text-align: center"> </p>
+    <p>If the settings aren’t copied from another application, select the following values from the drop-down menus on the <strong>Defect Tracking</strong> page to start the configuration process: <strong>Tracker instance</strong> (Jira), <strong>Project</strong> (a project name), and <strong>Issue type</strong> (Task, Bug, etc.). Click the <strong>Create config</strong> <img alt="image80.png" class="ns" height="17" src="assets/images/image217.png" width="30"/> button at the top right.</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="image119.png" class="b" height="306" src="assets/images/image218.png" width="70%"/></p>
+    <p style="text-align: center"> </p>
+    <p>After that, you can start matching the defect statuses in the fields that appear on the page.</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="image131.png" class="b" height="487" src="assets/images/image219.png" width="70%"/></p>
+    <p style="text-align: center"> </p>
+    <p>The mapping of defect statuses should be set separately for every combination of values in the <strong>Tracker Instance/Project/Issue type</strong> fields.</p>
+    <h4 data-list-level="5">Automatic status mapping</h4>
+    <p>The <strong>Auto map</strong> button in the <strong>Auto mapping</strong> section allows you to automatically map statuses and fields if they are exactly the same in Maverix and Jira. It’s reasonable to use this functionality at the beginning of the process of mapping statuses and fields, and then manually adjust the results if needed.</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="image288.png" class="b" height="107" src="assets/images/image220.png" width="60%"/></p>
+    <p style="text-align: center"> </p>
+    <p>After the automatic mapping of statuses and fields, click the <strong>Update config</strong> button in the right upper corner of the <strong>Defect Tracking</strong> page to save the created configuration.</p>
+    <h4 data-list-level="5" style="font-size: 16px">Automatic Filtering of Security Defects</h4>
+    <p>When selecting values in the <strong> Tracker Instance/Project/Issue type</strong> fields, you should configure the parameters for automatic filtering and synchronization of security defects.</p>
+    <p>Defects can be synchronized both from Maverix to Jira and from Jira to Maverix. Let’s assume that prior to synchronization with Maverix, Jira already has several project-related none-security development defects. If the synchronization filter filter is not set, all these development defects will be considered by Maverix as security ones, which is really not the case. To prevent this misinterpretation, we need to add a filter and create a rule to distinguish security defects from all other development defects.</p>
+    <p>Click the <strong>+Add new</strong> button in the <strong>Filter mapping</strong> section of the <strong>Defect Tracking</strong> page.</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="image128.png" class="b" height="144" src="assets/images/image221.png" width="95%"/></p>
+    <p> </p>
+    <p>The <strong>Add filter</strong> window appears.</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="image108.png" class="b" height="434" src="assets/images/image222.png" width="50%"/></p>
+    <p style="text-align: center"> </p>
+    <p>Let’s assume that all security defects in Jira are labeled with the <strong>y-demo</strong> label. In this case, we need to select <strong>Labels</strong> from the <strong>Tracker field</strong> drop-down menu, &quot;=&quot; from the <strong>Operator</strong> drop-down menu, write <strong>y-demo</strong> in the <strong>Value</strong> field, and click the <strong>Add</strong> button on the right. The newly created appears in the <strong>Add filter</strong> window</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="image127.png" class="b" height="473" src="assets/images/image223.png" width="50%"/></p>
+    <p style="text-align: center"> </p>
+    <p>and on the <strong>Defect Tracking</strong> page.</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="image118.png" class="b" height="146" src="assets/images/image224.png" width="95%"/></p>
+    <p> </p>
+    <p>Click the <strong>Update config</strong> button in the right upper corner of the <strong>Defect Tracking</strong> page, to save the configuration.</p>
+    <h4 data-list-level="5">Defect Status Mapping Wizard</h4>
+    <p>Defect Status Mapping Wizard is used to configure defect statuses mapping between Maverix and Jira.</p>
+    <p> </p>
+    <table border="0" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+      <colgroup>
+        <col style="width: 67px;"/>
+        <col style="width: 919px;"/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><img class="ns" height="54" src="assets/images/image.png" width="55"/></td>
+          <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><strong><span style="color:#164a96;"><span style="font-size:1rem">If a mapping of defects for an application was configured without this wizard, the old interface will be displayed. Please use the Status mapping wizard for the configuration of new applications.</span></span></strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p>Open the <strong>Defect Tracking</strong> page and click the <strong>Wizard</strong> button in the <strong>Status mapping wizard</strong> section. The wizard allows you to configure the mapping of defect statuses both when exporting to the defect tracking system and when importing.</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="Picture 56" class="b" height="635" src="assets/images/image225.png" width="60%"/></p>
+    <p style="text-align: center"> </p>
+    <p>The left column displays the statuses in Maverix, and and the center column requires you to select corresponding statuses in defect tracking system. After completing the export status mapping, click the <strong>Next</strong> button to configure the import statuses.</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="Maverix" class="b" height="635" src="assets/images/image226.png" width="60%"/></p>
+    <p style="text-align: center"> </p>
+    <p>When a new status appears in the defect tracking system, you can add it to the status mapping table by clicking the <strong>Add row</strong> button. After completing all necessary settings, click the <strong>Save</strong> button. The list of all mapped statuses appears in the <strong>Status mapping wizard</strong> section. If necessary, you can start the wizard again and repeat the mapping of statuses.</p>
+    <p> </p>
+    <p style="text-align: center"><img height="992" src="assets/images/image415.png" width="95%"/></p>
+    <p> </p>
+    <p>Click the <strong>Update config</strong> button in the right upper corner of the <strong>Defect Tracking</strong> page, to save the configuration.</p>
+    <h4 data-list-level="5">Mapping the defect fields</h4>
+    <p>It’s important to ensure consistency and label all new security defects in Maverix with the <strong>y-demo</strong> label before synchronizing them with Jira. This action can be automatically set in the <strong>Field mapping</strong> section of the <strong>Defect Tracking</strong> page. Click the <strong>+Add new</strong> button and choose <strong>Constant</strong> from the <strong>Hub field</strong> drop-down menu, <strong>Labels [value]</strong> from the <strong>Tracker field</strong> drop-down menu, write <strong>y-demo</strong> in the <strong>Constant</strong> field, and click the <strong>Add</strong> button at the right.</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="image121.png" class="b" height="526" src="assets/images/image228.png" width="40%"/></p>
+    <p style="text-align: center"> </p>
+    <p>This set up a new field mapping rule between Maverix and Jira. This rule is displayed in the <strong>Field mapping</strong> section of the <strong>Defect Tracking</strong> page.</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="image104.png" class="b" height="450" src="assets/images/image229.png" width="90%"/></p>
+    <p style="text-align: center"> </p>
+    <p>Similarly, this mechanism can be used to assign an assignee for defects created in Maverix in the defect tracking system.</p>
+    <p> </p>
+    <p style="text-align: center"><img height="724" src="assets/images/image416.png" width="40%"/></p>
+    <p> </p>
+    <p>As a result of the subsequent synchronization in the task tracking system, the created defects will have the selected user in the <b>Assignee </b>field.</p>
+    <p>Note that there is a warning at the bottom of the <strong>Field mapping</strong> section that multiple fields in Maverix and in Jira are automatically mapped to each other by Maverix. These fields are listed in table format. All of these fields must be filled in when creating a defect in Jira. The list of &quot;required&quot; fields is defined for each project in Jira. If more &quot;mandatory&quot; fields are required for project defects in Jira, Maverix displays an appropriate warning with the name(s) of the Jira fields in the <strong>Field mapping</strong> section. These Jira fields should be mapped to Maverix fields using the field mapping mechanism.</p>
+    <p>For example, the Jira project requires defect priority. In this case, you need to map the defect priority in Maverix to the defect priority in Jira. Click the <strong>+Add new</strong> button and choose <strong>Priority [list]</strong> from the <strong>Hub field</strong> drop-down menu, <strong>Priority [list]</strong> from the <strong>Tracker field</strong> drop-down menu and click the <strong>Add</strong> button. This will create a new field mapping rule. It is shown in the <strong>Field mapping</strong> section.</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="image102.png" class="b" height="628" src="assets/images/image231.png" width="70%"/></p>
+    <p style="text-align: center"> </p>
+    <p>However, after creating this mapping rule, a warning appeared the <strong>Field mapping</strong> section regarding the existing unmapped fields and possible incorrect behavior when synchronizing with Jira. The defect priority lists in Maverix and Jira project are often different, so the priority values need to be mapped separately for every project. Click the <strong>Edit list elements</strong> <img alt="image111.png" class="ns" height="13.3" src="assets/images/image232.png" width="17.3"/> icon and pair Maverix defect priorities with Jira defect priorities one by one using the drop-down menus in the <strong>Add values</strong> window. Click the <strong>Add</strong> button for each pair of mapped priorities.</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="image45.png" class="b" height="516" src="assets/images/image233.png" width="40%"/></p>
+    <p style="text-align: center"> </p>
+    <p>After this step, the warning in the <strong>Field mapping</strong> section should disappear.</p>
+    <p>To complete the priority mapping, you need to set a bidirectional synchronization of priorities between Maverix and Jira. There’s an indicator <img alt="image53.png" class="ns" src="assets/images/image234.png"/> in the priorities mapping string showing that sync is now set just from Maverix into Jira. Now it shows that the priority sync is only set from Maverix to Jira.</p>
+    <p>Click the edit <img alt="image12.png" class="ns" src="assets/images/image235.png"/> icon on the right to change synchronization to bidirectional. The <strong>Edit field</strong> window appears. Click the direction sign <img alt="image53.png" class="ns" src="assets/images/image236.png"/> between the <strong>Hub field</strong> and <strong>Tracker field</strong> several times. The direction sign changes from <img alt="image48.png" class="ns" src="assets/images/image237.png"/> to <img alt="image38.png" class="ns" src="assets/images/image238.png"/> and to the bidirectional sign <img alt="image43.png" class="ns" src="assets/images/image239.png"/>.</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="image57.png" class="b" height="162" src="assets/images/image240.png" width="50%"/></p>
+    <p style="text-align: center"> </p>
+    <p>Click the <strong>Save</strong> button. The <img alt="image33.png" class="ns" src="assets/images/image241.png"/> indicator in the priorities mapping string shows that the priority sync between Maverix and Jira is now bidirectional.</p>
+    <p> </p>
+    <p style="text-align: center"><img alt="image28.png" class="b" height="335" src="assets/images/image242.png" width="75%"/></p>
+    <p style="text-align: center"> </p>
+    <p>Note that constants mapping should be one-directional because constants are defined once and do not change (the label mapping is an example).</p>
+    <p> </p>
+    <p> </p>
+  </body>
+</html>

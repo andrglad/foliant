@@ -1,0 +1,48 @@
+2021-11-15 10:41:00,498 |           flt.mkdocs |    ERROR | Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/foliant/backends/mkdocs.py", line 205, in make
+    process = run(
+  File "/usr/lib/python3.8/subprocess.py", line 512, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'mkdocs gh-deploy' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/foliant/backends/mkdocs.py", line 218, in make
+    raise RuntimeError(
+RuntimeError: GitHub Pages deploy failed: [33mWARNING  -  [0mConfig value: 'pages'. Warning: The 'pages' configuration option has been deprecated and will be removed in a future release of MkDocs. Use 'nav' instead.
+INFO     -  Cleaning site directory
+INFO     -  Building documentation to directory: /usr/src/app/__folianttmp__/my_awesome_project.mkdocs.src/site
+INFO     -  Documentation built in 6.88 seconds
+[31mERROR    -  [0mCannot deploy - this directory does not appear to be a git repository
+[33mWARNING  -  [0mVersion check skipped: No version specified in previous deployment.
+INFO     -  Copying '/usr/src/app/__folianttmp__/my_awesome_project.mkdocs.src/site' to 'gh-pages' branch and pushing to GitHub.
+[31mERROR    -  [0mFailed to deploy to GitHub with error: 
+not a git repository (or any parent up to mount point /usr/src)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+
+Deployment Aborted!
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/foliant/utils.py", line 158, in spinner
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/foliant/backends/mkdocs.py", line 226, in make
+    raise RuntimeError(f'Build failed: {exception}')
+RuntimeError: Build failed: GitHub Pages deploy failed: [33mWARNING  -  [0mConfig value: 'pages'. Warning: The 'pages' configuration option has been deprecated and will be removed in a future release of MkDocs. Use 'nav' instead.
+INFO     -  Cleaning site directory
+INFO     -  Building documentation to directory: /usr/src/app/__folianttmp__/my_awesome_project.mkdocs.src/site
+INFO     -  Documentation built in 6.88 seconds
+[31mERROR    -  [0mCannot deploy - this directory does not appear to be a git repository
+[33mWARNING  -  [0mVersion check skipped: No version specified in previous deployment.
+INFO     -  Copying '/usr/src/app/__folianttmp__/my_awesome_project.mkdocs.src/site' to 'gh-pages' branch and pushing to GitHub.
+[31mERROR    -  [0mFailed to deploy to GitHub with error: 
+not a git repository (or any parent up to mount point /usr/src)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+
+Deployment Aborted!
+
+
+2021-11-15 10:41:01,071 |                  flt | CRITICAL | No result returned by backend

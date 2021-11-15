@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Specific parameters of the scan_ artifact.py script</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" />
+</head>
+<body>
+  <div>
+    <h2>Specific parameters of the scan_ artifact.py script</h2>
+  </div>
+  <table class="noborder">
+    <colgroup>
+      <col span="4" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th style="background-color: #164A96;color: #FFFFFF">Parameter</th>
+        <th style="text-align: center;background-color: #164A96;color: #FFFFFF">Required parameter</th>
+        <th style="background-color: #164A96;color: #FFFFFF">Description</th>
+        <th style="background-color: #164A96;color: #FFFFFF">Example</th>
+      </tr>
+      <tr>
+        <td rowspan="2"><code>--artifact-url</code></td>
+        <td rowspan="2" style="text-align: center">–</td>
+        <td rowspan="2">URL of the artifact stored in Nexus RM or file storage. If this URL is specified, other parameters of artifact types are ignored</td>
+        <td rowspan="2"><code>--artifact-url https://nexus.dev.maverix.co/repository/web-maven-test/com/mkyong/web/java-web-project/1.15/java-web-project-1.15.war</code></td>
+      </tr>
+      <tr>
+      </tr>
+      <tr>
+        <td rowspan="2"><code>--artifact-type</code></td>
+        <td rowspan="2" style="text-align: center">–</td>
+        <td rowspan="2">Required if artifact-url isn&#39;t specified, otherwise it is an auxiliary parameter. Valid values: maven, docker, file_storage, npm, yum, raw</td>
+        <td rowspan="2"><code>--artifact-type maven</code></td>
+      </tr>
+      <tr>
+      </tr>
+      <tr>
+        <td rowspan="2"><code>--artifact-name</code></td>
+        <td rowspan="2" style="text-align: center">–</td>
+        <td rowspan="2">Artifact name in Maverix</td>
+        <td rowspan="2"><code>--name java-web-project-war</code></td>
+      </tr>
+      <tr>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

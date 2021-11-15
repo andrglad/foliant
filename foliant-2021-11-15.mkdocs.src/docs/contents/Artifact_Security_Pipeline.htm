@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Artifact Security Pipeline</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" />
+</head>
+<body>
+  <h3 data-list-level="4">Artifact Security Pipeline</h3>
+  <p>Build tools consider source code compiled for execution or testing as an artifact. Artifacts are created by software engineering tools based on the source codebase. Artifacts are important from an application development perspective as entities that can be included in a delivery.</p>
+  <p>Select an application and click the <strong>Development</strong> menu item on the left. Artifacts are listed on the <strong>Artifacts</strong> tab.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="594" src="assets/images/image370.png" width="95%" /></p>
+  <p style="text-align: center"> </p>
+  <p>Multiple artifacts (for example, WAR-files, distributions as archive files, Docker images, etc.) can exist for a single application source codebase.</p>
+  <p>In terms of application security, each artifact can be scanned for security issues. Maverix helps to automate this process by supporting <strong>DevSecOps</strong> artifact pipelines. Click the <strong>DevSecOps</strong> menu item on the left and the <strong>Show pipeline config</strong> <img alt="image12.png" class="ns" height="20" src="assets/images/image144.png" width="20" /> button in the artifact pipeline card on the <strong>Artifact pipelines</strong> tab to get details on the artifact pipeline.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="476" src="assets/images/image371.png" width="95%" /></p>
+  <p> </p>
+  <p>The pipeline details page appears.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="1018" src="assets/images/image372.png" width="95%" /></p>
+  <p> </p>
+  <p>This page contains five cards, or components, for the selected example of artifact pipeline:</p>
+  <div style=" margin-left: 0;">
+    <ul class="Disc">
+      <li>Artifact card.</li>
+      <li>Orchestration tool card.</li>
+      <li>AST card.</li>
+      <li>Tagging card.</li>
+      <li>Webhook card.</li>
+    </ul>
+  </div>
+  <p>The Artifact card represents the artifact to be scanned for security issues. The version of the artifact to be scanned is specified as a parameter when starting the scan:</p>
+  <div style=" margin-left: 0;">
+    <ul class="Disc">
+      <li>To specify the artifact version, click the <strong>Actions </strong><img alt="image4.png" class="ns" height="18" src="assets/images/image16.png" width="30" /> button at the top right and select the <strong>Start scan</strong> item from the drop-down menu.</li>
+      <li>In the <strong>Scan the artifact</strong> window that appears, select the artifact version from the list of available versions in the <strong>Artifact version</strong> field.</li>
+      <li>Click the <strong>Start scan</strong> button at the bottom to start scanning.</li>
+    </ul>
+    <p> </p>
+  </div>
+  <p style="text-align: center"><img alt="image2.png" class="b" height="267" src="assets/images/image147.png" width="50%" /></p>
+  <p style="text-align: center"> </p>
+  <p>The next card for this pipeline is the TeamCity orchestration tool card. It allows you to configure the orchestration tool. If TeamCity runs on multiple nodes, you can select a particular node for scanning. To do this, select the label with which it’s marked. To select a labeled node (e.g., <strong>linux</strong>), click the edit <img alt="image12.png" class="ns" src="assets/images/image148.png" /> icon on the orchestration tool card. Select the <strong>Use node name</strong> mode in the <strong>Update CI tool</strong> window that opens, and choose <strong>linux</strong> from the drop-down list in the <strong>Node label</strong> field, and click the <strong>Update</strong> button.</p>
+  <p> </p>
+  <p style="text-align: center"><img alt="image15.png" class="b" height="374" src="assets/images/image149.png" width="50%" /></p>
+  <p> </p>
+  <p>A notification confirming the TeamCity configuration update appears at the bottom right.</p>
+  <p> </p>
+  <p style="text-align: center"><img alt="image25.png" class="b" height="58" src="assets/images/image150.png" width="35%" /></p>
+  <p> </p>
+  <p>The TeamCity tool card now contains information on the selected node with the <strong>linux</strong> label.</p>
+  <p> </p>
+  <p style="text-align: center"><img alt="image17.png" class="b" src="assets/images/image151.png" /></p>
+  <p style="text-align: center"> </p>
+  <p>The scanning process will run on this node, labeled <strong>linux</strong>.</p>
+  <p>The next card for this pipeline is the AST tool card. In this example, it is the Nexus IQ Server tool. Several AST tools can be used for one pipeline. The Nexus IQ Server is SCA (Software Composition Analysis) scanning tool. Click the edit <img alt="image12.png" class="ns" height="20" src="assets/images/image152.png" width="20" /> icon on the AST tool card to tune the scanning parameters in the <strong>Update SCA scan config</strong>.</p>
+  <p> </p>
+  <p style="text-align: center"><img alt="image280.png" class="b" height="273" src="assets/images/image153.png" width="50%" /></p>
+  <p style="text-align: center"> </p>
+  <p>Here you can select the AST tool and stage from the drop-down list (<strong>Develop</strong>, <strong>Build</strong>, <strong>Stage Release</strong>, <strong>Release</strong>, and <strong>Operate</strong>).</p>
+  <h4 data-list-level="5">Artifact tagging</h4>
+  <div>
+    <p>The Tagging card and the artifact tagging are optional. To add tagging to the artifact security pipeline, click the <strong>Actions </strong><img alt="image4.png" class="ns" height="18" src="assets/images/image17.png" width="30" /> button at the top right of the <strong>Structure </strong>tab and select <strong>Add new element</strong> from the drop-down menu. Select the <strong>Tagging config</strong> from the list in the window that appears.</p>
+  </div>
+  <p>Some repositories (e.g., Nexus Pro) support tagging. Tagging allows you to put labels on artifacts based on scan results. The Nexus IQ Server tool works in the SCA area. If the scan passes Quality Gate successfully, the artifact will be tagged with &quot;QG_SCA_PASS&quot;, otherwise it will be tagged with &quot;QG_SCA_FAIL&quot;. The absence of a tag on an artifact with defined QG means that the artifact has not yet been scanned. If QG is not set, and an artifact scan has been performed, the artifact will not be tagged at all as a result of this scan.</p>
+  <p>The tagging card allows you to automatically tag artifacts as a result of a security scan.</p>
+  <p>Click the edit <img alt="image12.png" class="ns" height="20" src="assets/images/image154.png" width="20" /> icon on the Tagging card and select the artifact name from the <strong>Target artifact</strong> list in the <strong>Update tagging config</strong> window to define the artifact to be tagged.</p>
+  <p> </p>
+  <p style="text-align: center"><img alt="image262.png" class="b" height="286" src="assets/images/image155.png" width="50%" /></p>
+  <p style="text-align: center"> </p>
+  <table border="0" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+    <colgroup>
+      <col style="width: 62px;" />
+      <col style="width: 924px;" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><img class="ns" height="54" src="assets/images/image.png" width="55" /></td>
+        <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><strong><span style="color:#164a96;"><span style="font-size:1rem">Tags that can be applied to an artifact are defined by the user with Administrator rights on the Administration page using the Tagging config menu item. The corresponding notification is located in the Update tagging config window. Configuring artifact tagging is described in the &quot;<a href="../AAG/Tagging_Configuration.htm">Tagging Configuration</a>&quot; section of the Application Administrator Guide.</span></span></strong></td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br />
+    Maverix defines the practice used during the scan (SAST, DAST, or SCA) and a scan result (&quot;passed&quot; or &quot;failed&quot;), chooses the corresponding tag from the list (e.g., &quot;QG_SAST_PASS&quot;), and labels the artifact with this tag.</p>
+  <h4 data-list-level="5">Webhooks</h4>
+  <p>The Webhook card and the webhooks are optional. Essentially, a webhook is a method for notifying the system about some events. Using a webhook, you can start a pipeline when a predefined event occurs. For example, a webhook can be configured for a particular repository as follows: webhook is called if a particular predefined artifact is placed into that repository. The webhook settings can be seen in the Webhook card. Click the edit <img alt="image221.png" class="ns" height="19" src="assets/images/image156.png" width="20" /> icon on this card to update settings.</p>
+  <p> </p>
+  <p style="text-align: center"><img alt="image228.png" class="b" src="assets/images/image157.png" /></p>
+  <p style="text-align: center"> </p>
+  <p>Webhook just sends a signal to start some processes. It doesn&#39;t use any feedback from the initiated processes. Webhook can be used not only for artifact pipelines but for source code pipelines, too. Typically, webhook can be set for a new source code merge. In this case, the security scan of the newly merged code should be launched automatically by webhook.</p>
+  <h4>Custom webhook</h4>
+  <p>In some cases, due to specific workflow, it&#39;s necessary to use non-standard ways of communication with external tools. For example, direct artifact tagging via the Nexus RM API may have some restrictions. This is often due to restricted access rights or other specific requirements. Custom webhooks can be used to overcome these limitations.</p>
+  <p>Note that the following conditions must be met for the normal operation of this mechanism. First, you need to specify the artifact tagging by adding the Tagging config to the security pipeline. Second, the Quality Gate profile should be connected to the security pipeline to enable the tagging mechanism to function.</p>
+  <p>Before enabling the Custom webhook configuration in the security pipeline, it&#39;s necessary to create it on the Administration page. For more information, see the &quot;<span data-highlight-container="true"><a href="file:///C:/RH/Maverix/Output/www/mergedProjects/AAG/Custom_Webhooks_Configuration.htm" title="Custom Webhooks Configuration"><span data-highlight="true">Custom</span><span> </span><span data-highlight="true">Webhooks</span><span> </span></a><span data-highlight="true"><a href="../AAG/Custom_Webhooks_Configuration.htm" title="Custom Webhooks Configuration">Configuration</a>&quot;</span></span> section of the Application Administrator Guide.</p>
+  <p>Let&#39;s consider enabling Custom webhook using artifact security pipeline as an example. Including Custom Webhook into security pipeline of source code is done in the same way.</p>
+  <p>Select an application and click the <b>Show </b><b>app </b><b>details <img class="ns" height="20" src="assets/images/image290.png" width="20" /></b> icon in its card.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="756" src="assets/images/image379.png" width="95%" /></p>
+  <p> </p>
+  <p>Select the <b>DevSecOps </b>menu item on the left and go to the <b>Artifact pipelines</b> tab.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="770" src="assets/images/image380.png" width="95%" /></p>
+  <p> </p>
+  <p>Click the <b>Show </b><b>pipeline </b><b>config</b> icon to open the Security Pipeline page.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="772" src="assets/images/image382.png" width="95%" /></p>
+  <p> </p>
+  <p>Click the <b>Action </b>button in the right upper corner of the <strong>Structure</strong> tab and select the <strong>Add new element</strong> item from the drop-down menu.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="824" src="assets/images/image383.png" width="95%" /></p>
+  <p> </p>
+  <p>Select the <strong>Custom webhook config</strong> item in the dialog box that appears.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="432" src="assets/images/image296.png" width="50%" /></p>
+  <p style="text-align: center"> </p>
+  <p>Select a previously created configuration from the drop-down menu in the dialog box that appears, then click the <b>Create</b> button.</p>
+  <p> </p>
+  <p style="text-align: center"><img height="255" src="assets/images/image299.png" width="50%" /></p>
+  <h4 data-list-level="5">Scanning</h4>
+  <p>When all the DevSecOps artifact pipeline components have been configured, click the <strong>Actions </strong><img alt="image4.png" class="ns" height="18" src="assets/images/image158.png" width="30" /> button at the top right of the pipeline detail page and select the <strong>Export CI/CD</strong> item from the drop-down menu to export the newly created security pipeline to the CI/CD orchestration tool (TeamCity in this example).</p>
+  <p> </p>
+  <p style="text-align: center"><img height="1024" src="assets/images/image377.png" width="95%" /></p>
+  <p> </p>
+  <p>After the successful export to a CI/CD tool, click the <strong>Actions </strong><img alt="image4.png" class="ns" height="18" src="assets/images/image160.png" width="30" /> button and choose the <strong>Start scan</strong> item from the drop-down menu to start the artifact security scan using the Nexus IQ Server tool. The <strong>Scan the artifact</strong> window appears. Specify the artifact version in the <strong>Artifact version</strong> field and click the <strong>Start scan</strong> button to start scanning.</p>
+  <p> </p>
+  <p style="text-align: center"><img alt="image222.png" class="b" height="277" src="assets/images/image161.png" width="50%" /></p>
+  <p style="text-align: center"> </p>
+  <p>The confirmation message appears at the bottom right indicating that the scanning has started.</p>
+  <p> </p>
+  <p style="text-align: center"><img alt="image225.png" class="b" height="71" src="assets/images/image162.png" width="30%" /></p>
+  <p style="text-align: center"> </p>
+  <p>After a few seconds, this message will be replaced by the next one.</p>
+  <p> </p>
+  <p style="text-align: center"><img alt="image227.png" class="b" height="80" src="assets/images/image163.png" width="40%" /></p>
+  <p style="text-align: center"> </p>
+  <p>When the scan is complete, its results will be added to the Scan History tab.</p>
+  <p> </p>
+</body>
+</html>

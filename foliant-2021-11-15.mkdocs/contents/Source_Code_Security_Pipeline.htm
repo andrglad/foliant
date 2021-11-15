@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Source Code Security Pipeline</title>
+    <meta name="generator" content="Adobe RoboHelp 2020"/>
+    <link rel="stylesheet" href="assets/css/default.css"/>
+    <link rel="stylesheet"/>
+  </head>
+  <body>
+    <div>
+      <h3 data-list-level="4">Source Code Security Pipeline</h3>
+      <table border="0" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+        <colgroup>
+          <col style="width: 68px;"/>
+          <col style="width: 917px;"/>
+        </colgroup>
+        <tbody>
+          <tr>
+            <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><img class="ns" height="54" src="assets/images/image.png" width="55"/></td>
+            <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><strong><span style="color:#164a96;"><span style="font-size:1rem">A properly configured source codebase is required for creating a source code security pipeline. If the source codebase doesn&#39;t exist, it should be created first. For more information, see the &quot;<a href="Code_bases.htm">Code bases</a>&quot; section.</span></span></strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p> </p>
+      <p>Click the <strong>DevSecOps</strong> menu item on the left and then the <strong>+Add new</strong> button at the top right of the <strong>Source code pipelines</strong> pipelines tab to add a new source code pipeline.</p>
+      <p> </p>
+      <p style="text-align: center"><img height="722" src="assets/images/image364.png" width="95%"/></p>
+      <p> </p>
+      <p>The <strong>Choose the codebase for pipeline</strong> window appears. Double-click the name of the codebase you want to add.</p>
+      <p> </p>
+      <p style="text-align: center"><img alt="image110.png" class="b" height="381" src="assets/images/image126.png" width="50%"/></p>
+      <p style="text-align: center"> </p>
+      <p>The new codebase pipeline appears on the <strong>Source code pipelines</strong> tab.</p>
+      <p> </p>
+      <p style="text-align: center"><img alt="image117.png" class="b" height="486" src="assets/images/image127.png" width="80%"/></p>
+      <p style="text-align: center"> </p>
+      <p>Click the Show pipeline config <img alt="image12.png" class="ns" src="assets/images/image128.png"/> icon on the source codebase pipeline card. The pipeline details page appears. This page contains two warnings about incorrect pipeline configuration because the orchestration (CI/CD) tool and the scan tool haven’t been added to the pipeline yet.</p>
+      <p> </p>
+      <p style="text-align: center"><img alt="image109.png" class="b" height="510" src="assets/images/image129.png" width="70%"/></p>
+      <p style="text-align: center"> </p>
+      <p>Click the <strong>Actions </strong><img alt="image4.png" class="ns" height="18" src="assets/images/image130.png" width="30"/> button at the top right and select the <strong>Add new element</strong> item from the drop-down menu. Select the <strong>CI</strong> item in the window that appears to add the CI/CD orchestration tool (e.g., TeamCity) to the security pipeline.</p>
+      <p> </p>
+      <p style="text-align: center"><img alt="image55.png" class="b" height="304" src="assets/images/image131.png" width="50%"/></p>
+      <p style="text-align: center"> </p>
+      <p>In the next window, select TeamCity from the list of tools and click the <strong>Create</strong> button. The <strong>Pipeline auth token</strong> field can be left blank.</p>
+      <p> </p>
+      <p style="text-align: center"><img alt="image50.png" class="b" height="349" src="assets/images/image132.png" width="50%"/></p>
+      <p style="text-align: center"> </p>
+      <p>The new TeamCity card and the confirmation notification appear, and one corresponding warning disappears from the <strong>Pipeline Structure</strong> tab.</p>
+      <p> </p>
+      <p style="text-align: center"><img alt="image39.png" class="b" src="assets/images/image133.png"/></p>
+      <p style="text-align: center"> </p>
+      <p>The next step is to add a scan tool.</p>
+      <p>Click the <strong>Actions </strong><img alt="image4.png" class="ns" height="17.4" src="assets/images/image134.png" width="29.1"/> button at the top right and select the <strong>Add new element</strong> item from the drop-down menu. Select the <strong>SAST tool</strong> item in the window that appears to add the Checkmarx scan tool to the pipeline.</p>
+      <p> </p>
+      <p style="text-align: center"><img height="1015" src="assets/images/image365.png" width="95%"/></p>
+      <p style="text-align: center"><img height="436" src="assets/images/image366.png" width="50%"/></p>
+      <p> </p>
+      <p>Select the Checkmarx item from the list of tools in the <strong>Create SAST scan config</strong> window.</p>
+      <p> </p>
+      <p style="text-align: center"><img height="264" src="assets/images/image367.png" width="50%"/></p>
+      <p style="text-align: center"> </p>
+      <p style="text-align: center"><img height="706" src="assets/images/image368.png" width="50%"/></p>
+      <p> </p>
+      <p>In the window that appears, configure the following parameters:</p>
+      <ul class="Disc">
+        <li><strong>Scan mode</strong> - Select the scanning mode (<strong>Full</strong>/<strong>Incremental</strong>).</li>
+        <li><strong>Predefined preset/Dynamically modified preset</strong> - – Select the predefined or dynamic preset that will be used for the scan. The <strong>Predefined preset</strong> option allows the next step to select any preset imported from Checkmarx. More information on Dynamic Presets is provided later in this section.</li>
+        <li><strong>Preset</strong> — of Select the Checkmarx preset that will be used for the scan. This parameter is used only if the <strong>Predefined preset</strong> is selected in the previous field.</li>
+      </ul>
+      <p>After filling in the other fields (<strong>Root team</strong>, <strong>Team</strong>, <strong>Excluded directories</strong>), click the <strong>Create</strong> button, see the &quot;<a data-xref="{title}" href="Security_pipeline_structure.htm">Security pipeline structure</a>&quot; section.</p>
+      <p> </p>
+      <table border="0" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+        <colgroup>
+          <col style="width: 66px;"/>
+          <col style="width: 920px;"/>
+        </colgroup>
+        <tbody>
+          <tr>
+            <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><img class="ns" height="54" src="assets/images/image.png" width="55"/></td>
+            <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><strong><span style="color:#164a96;"><span style="font-size:1rem">If the Team field is left blank, a team with a name corresponding to the name of the application in Maverix will be automatically created..</span></span></strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p> </p>
+      <p>The new Checkmarx tool card appears on the pipeline details page, and the last warning disappears from the page.</p>
+      <p> </p>
+      <table border="0" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+        <colgroup>
+          <col style="width: 62px;"/>
+          <col style="width: 923px;"/>
+        </colgroup>
+        <tbody>
+          <tr>
+            <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><img class="ns" height="54" src="assets/images/image.png" width="55"/></td>
+            <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><strong><span style="color:#164a96;"><span style="font-size:1rem">The name of the used preset is displayed on the tool card.</span></span></strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="text-align: center"> </p>
+      <p style="text-align: center"><img height="1014" src="assets/images/image369.png" width="95%"/></p>
+      <p> </p>
+      <p>Now click the <strong>Actions </strong><img alt="image4.png" class="ns" height="18" src="assets/images/image140.png" width="30"/> button at the top right and select the <strong>Export CI/CD</strong> item from the drop-down menu to export the newly created security pipeline to the CI/CD orchestration tool (e.g., TeamCity). This is required to synchronize the pipeline settings in Maverix and in TeamCity. The confirmation message appears at the bottom right.</p>
+      <p> </p>
+      <p style="text-align: center"><img class="b" height="1122" src="assets/images/image312.png" width="70%"/></p>
+      <p> </p>
+      <p>After the successful export to the CI/CD tool, click the <strong>Actions</strong> <img alt="image4.png" class="ns" height="18" src="assets/images/image142.png" width="30"/> button and select the <strong>Start scan</strong> item from the drop-down menu to start a source code security scan using the Checkmarx tool.</p>
+      <h4 data-list-level="5">Dynamic presets in Checkmarx</h4>
+      <p style=" margin-left: 0.01in;">If Checkmarx is used as a SAST tool, you can use <strong>Dynamically modified preset</strong>.</p>
+      <p style=" margin-left: 0.01in;"> </p>
+      <table border="0" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+        <colgroup>
+          <col style="width: 64px;"/>
+          <col style="width: 923px;"/>
+        </colgroup>
+        <tbody>
+          <tr>
+            <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><img class="ns" height="54" src="assets/images/image.png" width="55"/></td>
+            <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><strong><span style="color:#164a96;"><span style="font-size:1rem">If a particular programming language (and corresponding checks) is not selected in the Predefined preset, the code written in this language will be ignored during the scan..</span></span></strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <br/>
+        When using the <strong>Dynamically modified preset </strong>, the programming languages that make up the codebase are automatically recognized, and a new preset is formed, which includes checks for the detected languages. However, if a rule(s) that defines conditional risk acceptance (see the &quot;<a data-xref="{title}" href="Risk_acceptance.htm">Risk acceptance</a>&quot; section) has been created in Maverix, the corresponding condition(s) will also be automatically added to the Dynamically modified preset.</p>
+      <p style=" margin-left: 0.01in;">The advantages of such approach are as following:</p>
+      <div style=" margin-left: 0.25in;">
+        <ul class="Disc">
+          <li>On-the-fly response to changes in the code base (e.g., the appearance of new programming languages) with the following update of the Checkmarx preset to activate specific checks.</li>
+          <li>Reducing scan time by skipping unnecessary checks.</li>
+        </ul>
+      </div>
+      <p style=" margin-left: 0.01in;">If a new programming language appears in the codebase or a previously used one disappears, the preset is dynamically updated according to the changes.</p>
+      <p style=" margin-left: 0.01in;"> </p>
+    </div>
+  </body>
+</html>

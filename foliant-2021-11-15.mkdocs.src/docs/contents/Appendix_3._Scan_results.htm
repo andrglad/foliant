@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Appendix 3. Scan results</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" />
+</head>
+<body>
+  <h2 style="color: #1f63af">Appendix 3. Scanning results</h2>
+  <table class="noborder" style="width: 100%;">
+    <colgroup>
+      <col style="width: 97px;" />
+      <col style="width: 733px;" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th style="text-align: center;background-color: #1F63AF;color: #FFFFFF">Exit code</th>
+        <th style="background-color: #1F63AF;color: #FFFFFF">Description</th>
+      </tr>
+      <tr>
+        <td style="text-align: center;">0</td>
+        <td style="">Scan completed successfully</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">1</td>
+        <td style="">Scan failed, see error message</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">2</td>
+        <td style="">Scan completed, but Quality Gates failed. For example, the SAST tool found too many critical and high severity security issues in the source code.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <div align="left"> </div>
+  <table class="noborder" style="width: 100%;">
+    <colgroup>
+      <col />
+      <col />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th style="background-color: #1F63AF;color: #FFFFFF">Description</th>
+        <th style="background-color: #1F63AF;color: #FFFFFF">Scan status</th>
+      </tr>
+      <tr>
+        <td>Scanning, waiting for results</td>
+        <td>PENDING</td>
+      </tr>
+      <tr>
+        <td>Scanning, waiting for results</td>
+        <td>IN PROGRESS</td>
+      </tr>
+      <tr>
+        <td>Scan completed successfully</td>
+        <td>SUCCESS</td>
+      </tr>
+      <tr>
+        <td>Importing security issues and Quality Gates Information</td>
+        <td>IMPORTING</td>
+      </tr>
+      <tr>
+        <td>Scan skipped</td>
+        <td>SKIPPED</td>
+      </tr>
+      <tr>
+        <td>Scan failed</td>
+        <td>FAILED</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p><strong>Examples of closing messages in the CLI</strong></p>
+  <p>1. Scan completed successfully, QG is not set.</p>
+  <pre class="language-bash"><code class="language-bash">Status: Success Reason: QG is not specified Quality gates: SAST: N/S</code></pre>
+  <p>2. Scan completed successfully, QG is passed.</p>
+  <pre class="language-bash"><code class="language-bash">Status: Success Reason: QG is passed Quality gates: SAST: Success SCA: Success</code></pre>
+  <p>3. Scan completed successfully, security pipeline bypassed.</p>
+  <pre class="language-bash"><code class="language-bash">Status: Success Reason: pipeline was bypassed Quality gates: SAST: Bypassed SCA: Bypassed</code></pre>
+  <p>4. Scan completed unsuccessfully, QG isn’t passed.</p>
+  <pre class="language-bash"><code class="language-bash">Status: Failed Reason: QG is not passed Quality gates: SAST: Failed SCA: Success</code></pre>
+  <p>5. Scanning completed unsuccessfully due to integrity check.</p>
+  <pre class="language-bash"><code class="language-bash">Status: Failed Reason: integrity check failed: unknown codebase (https://github.com/appsecco/dvja.git, master) at DVJA application (code: dvja).</code></pre>
+  <p>JSON file with scan results</p>
+  <pre class="language-json"><code class="language-json">{ &quot;status&quot;: &quot;Success&quot;, &quot;reason&quot;: &quot;QG is passed&quot;, &quot;qualityGates&quot;: [ { &quot;practice&quot;: &quot;SAST&quot;, &quot;status&quot;: &quot;Success&quot; }, { &quot;practice&quot;: &quot;SCA&quot;, &quot;status&quot;: &quot;Success&quot; } ] }</code></pre>
+  <table class="noborder">
+    <colgroup>
+      <col span="3" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th style="background-color: #164A96;color: #FFFFFF">Parameter</th>
+        <th style="text-align: center;background-color: #164A96;color: #FFFFFF">Required parameter</th>
+        <th style="background-color: #164A96;color: #FFFFFF">Description</th>
+      </tr>
+      <tr>
+        <td><code>status</code></td>
+        <td style="text-align: center">+</td>
+        <td>Final scan status<br />
+          Values: Success|Failed</td>
+      </tr>
+      <tr>
+        <td><code>reason</code></td>
+        <td style="text-align: center">+</td>
+        <td>The reason for the return of the status described above. If &quot;Status: Failed&quot;, detailed error information is displayed</td>
+      </tr>
+      <tr>
+        <td><code>qualityGates</code></td>
+        <td style="text-align: center">–</td>
+        <td>Details on QG status for each practice (SAST, SCA, DAST) in the corresponding security pipeline</td>
+      </tr>
+      <tr>
+        <td><code>qualityGates.practice</code></td>
+        <td style="text-align: center">+</td>
+        <td>Practice name</td>
+      </tr>
+      <tr>
+        <td><code>qualityGates.status</code></td>
+        <td style="text-align: center">+</td>
+        <td>Quality Gate status: Success | Failed</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+</body>
+</html>

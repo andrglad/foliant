@@ -1,0 +1,114 @@
+2021-11-10 14:14:57,017 |           flt.mkdocs |    ERROR | Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/foliant/backends/mkdocs.py", line 188, in make
+    run(
+  File "/usr/lib/python3.8/subprocess.py", line 512, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'mkdocs build -d "/usr/src/app/foliant-2021-11-10.mkdocs"' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/foliant/backends/mkdocs.py", line 200, in make
+    raise RuntimeError(f'Build failed: {exception.output.decode()}')
+RuntimeError: Build failed: [33mWARNING  -  [0mConfig value: 'pages'. Warning: The 'pages' configuration option has been deprecated and will be removed in a future release of MkDocs. Use 'nav' instead.
+INFO     -  Cleaning site directory
+INFO     -  Building documentation to directory: /usr/src/app/foliant-2021-11-10.mkdocs
+Traceback (most recent call last):
+  File "/usr/local/bin/mkdocs", line 8, in <module>
+    sys.exit(cli())
+  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1659, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/__main__.py", line 187, in build_command
+    build.build(config.load_config(**kwargs), dirty=not clean)
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/commands/build.py", line 284, in build
+    nav = get_navigation(files, config)
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 101, in get_navigation
+    items = _data_to_navigation(nav_config, files, config)
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 156, in _data_to_navigation
+    return [
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 157, in <listcomp>
+    _data_to_navigation(item, files, config)[0]
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 149, in _data_to_navigation
+    return [
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 152, in <listcomp>
+    Section(title=key, children=_data_to_navigation(value, files, config))
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 156, in _data_to_navigation
+    return [
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 157, in <listcomp>
+    _data_to_navigation(item, files, config)[0]
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 149, in _data_to_navigation
+    return [
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 152, in <listcomp>
+    Section(title=key, children=_data_to_navigation(value, files, config))
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 163, in _data_to_navigation
+    file = files.get_file_from_path(path)
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/files.py", line 32, in get_file_from_path
+    return self.src_paths.get(os.path.normpath(path))
+  File "/usr/lib/python3.8/posixpath.py", line 336, in normpath
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/foliant/utils.py", line 158, in spinner
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/foliant/backends/mkdocs.py", line 226, in make
+    raise RuntimeError(f'Build failed: {exception}')
+RuntimeError: Build failed: Build failed: [33mWARNING  -  [0mConfig value: 'pages'. Warning: The 'pages' configuration option has been deprecated and will be removed in a future release of MkDocs. Use 'nav' instead.
+INFO     -  Cleaning site directory
+INFO     -  Building documentation to directory: /usr/src/app/foliant-2021-11-10.mkdocs
+Traceback (most recent call last):
+  File "/usr/local/bin/mkdocs", line 8, in <module>
+    sys.exit(cli())
+  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1659, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/usr/local/lib/python3.8/dist-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/__main__.py", line 187, in build_command
+    build.build(config.load_config(**kwargs), dirty=not clean)
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/commands/build.py", line 284, in build
+    nav = get_navigation(files, config)
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 101, in get_navigation
+    items = _data_to_navigation(nav_config, files, config)
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 156, in _data_to_navigation
+    return [
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 157, in <listcomp>
+    _data_to_navigation(item, files, config)[0]
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 149, in _data_to_navigation
+    return [
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 152, in <listcomp>
+    Section(title=key, children=_data_to_navigation(value, files, config))
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 156, in _data_to_navigation
+    return [
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 157, in <listcomp>
+    _data_to_navigation(item, files, config)[0]
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 149, in _data_to_navigation
+    return [
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 152, in <listcomp>
+    Section(title=key, children=_data_to_navigation(value, files, config))
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/nav.py", line 163, in _data_to_navigation
+    file = files.get_file_from_path(path)
+  File "/usr/local/lib/python3.8/dist-packages/mkdocs/structure/files.py", line 32, in get_file_from_path
+    return self.src_paths.get(os.path.normpath(path))
+  File "/usr/lib/python3.8/posixpath.py", line 336, in normpath
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+
+2021-11-10 14:14:57,029 |                  flt | CRITICAL | No result returned by backend

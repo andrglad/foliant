@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Parameters for interaction with the code base</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" />
+</head>
+<body>
+  <div>
+    <h3>Parameters for interaction with the code base</h3>
+    <table class="noborder" style="width: 100%;">
+      <colgroup>
+        <col />
+        <col />
+        <col />
+        <col />
+      </colgroup>
+      <tbody>
+        <tr>
+          <th rowspan="2" style="background-color: #164A96;color: #FFFFFF">Parameter</th>
+          <th rowspan="2" style="text-align: center;background-color: #164A96;color: #FFFFFF">Required parameter</th>
+          <th rowspan="2" style="background-color: #164A96;color: #FFFFFF">Description</th>
+          <th rowspan="2" style="background-color: #164A96;color: #FFFFFF">Example</th>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <td><code>--codebase-url</code></td>
+          <td style="text-align: center">+</td>
+          <td>URL of the remote cloned/ checked out repository for the master code base</td>
+          <td><code>--codebase-url https://github.com/appsecco/dvja.git</code></td>
+        </tr>
+        <tr>
+          <td rowspan="2"><code>--branch</code></td>
+          <td rowspan="2" style="text-align: center">–</td>
+          <td rowspan="2">Repository branch or tag of the master codebase. By default: master</td>
+          <td rowspan="2"><code>--branch master</code></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <td rowspan="3"><code>--branch-filter</code></td>
+          <td rowspan="3" style="text-align: center">–</td>
+          <td rowspan="3">Filter of scanned branches. It can be applied to both master and additional code bases. By default: master </td>
+          <td rowspan="3"><code>--branch-filter feature/*<br/>
+			--branch-filter *<br/>
+			‎--branch-filter develop</code></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <td><code>--codebase-name</code></td>
+          <td style="text-align: center">–</td>
+          <td>Name of the code base in Maverix. Maverix back-end should use appcode, codebase-url, and branch</td>
+          <td><code>--codebase-name dvja-master</code></td>
+        </tr>
+        <tr>
+          <td rowspan="4"><code>--codebase-type</code></td>
+          <td rowspan="4" style="text-align: center">–</td>
+          <td rowspan="4">VCS type. Possible values: git By default: git</td>
+          <td rowspan="4"><code>--codebase-type git</code></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <td rowspan="2"><code>--codebase-build-tool</code></td>
+          <td rowspan="2" style="text-align: center">–</td>
+          <td rowspan="2">Source code build tool. Possible values: maven, gradle, nuget, npm, pip‎By default: maven</td>
+          <td rowspan="2"><code>--codebase-build-tool nuget</code></td>
+        </tr>
+        <tr>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

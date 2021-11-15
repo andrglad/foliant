@@ -1,0 +1,29 @@
+2021-11-15 10:11:11,709 |                  flt |    ERROR | Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/foliant/cli/make.py", line 100, in get_config
+    config = Parser(project_path, config_file_name, self.logger, quiet).parse()
+  File "/usr/local/lib/python3.8/dist-packages/foliant/config/alt_structure/alt_structure.py", line 39, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/foliant/config/commit_count.py", line 15, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/foliant/config/date.py", line 16, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/foliant/config/downloadfile.py", line 29, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/foliant/config/env.py", line 15, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/foliant/config/from.py", line 64, in __init__
+    self._src_dir_name = Path(self._get_multiproject_config()['src_dir']).name
+  File "/usr/local/lib/python3.8/dist-packages/foliant/config/from.py", line 76, in _get_multiproject_config
+    with open(self.config_path.resolve()) as multiproject_config_file:
+FileNotFoundError: [Errno 2] No such file or directory: '/usr/src/app/foliant/foliant.yml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/foliant/utils.py", line 158, in spinner
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/foliant/cli/make.py", line 104, in get_config
+    raise FileNotFoundError(f'{exception} not found')
+FileNotFoundError: [Errno 2] No such file or directory: '/usr/src/app/foliant/foliant.yml' not found
+
+2021-11-15 10:11:11,712 |                  flt | CRITICAL | Config parsing failed.

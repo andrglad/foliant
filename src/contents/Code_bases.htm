@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Code bases</title>
+    <meta name="generator" content="Adobe RoboHelp 2020"/>
+    <link rel="stylesheet" href="assets/css/default.css"/>
+    <link rel="stylesheet"/>
+  </head>
+  <body>
+    <h3 data-list-level="4">Code bases</h3>
+    <p>The application isn’t limited to just one code base, but can include several ones. For example, one application can have different code repositories for development and release purposes (<strong><em>&lt;application-dev&gt;</em></strong> and <strong><em>&lt;application-release&gt;</em></strong>) with different source code metrics, different defect metrics, etc.</p>
+    <p>Click the <strong>Development</strong> menu item and the <strong>+Add new</strong> button at the top right of the <strong>Codebases</strong> tab to add a new code repository. The <strong>Create codebase</strong> window appears.</p>
+    <p> </p>
+    <p style="text-align: center"><img height="454" src="assets/images/image316.png" width="50%"/></p>
+    <p> </p>
+    <p>Specify the following parameters of code base:</p>
+    <div style=" margin-left: 0;">
+      <ul class="Disc">
+        <li>Select the type of repository (e.g., VCS_Bitbucket) from the <strong>Select Repository</strong> drop-down menu.</li>
+        <li>Specify the absolute codebase URL for the VCS repository in the <strong>Enter absolute codebase URL</strong> field.</li>
+      </ul>
+    </div>
+    <p>After entering the specified parameters, the code base will be automatically recognized. If necessary, update the additional fields that appear.</p>
+    <p> </p>
+    <p style="text-align: center"><img height="642" src="assets/images/image317.png" style="cursor: nwse-resize;" width="75%"/></p>
+    <p style="text-align: center"> </p>
+    <div style=" margin-left: 0;">
+      <ul class="Disc">
+        <li>The <strong>VCS type</strong> is the type of Version Control System.</li>
+        <li>The <strong>Auth method</strong> is the way of authentication. For Bitbucket, please, select login_password.</li>
+        <li>The <strong>Code base name</strong> is the name of the codebase in Maverix.</li>
+        <li>The <strong>Code base checkout URL</strong> field contains the exact code repository URL for the application. It’s recommended to copy-paste this URL from the repository tool.</li>
+        <li>The <strong>Branch filter</strong> is the filter of code base branches. This field supports the use of masks, for example, if you specify the &quot;feature_*&quot; value, all branches with the &quot;feature_&quot; prefix will be selected.</li>
+        <li><strong>Build tool</strong> field defines the tool used to work with the code repository (Maven in this example).</li>
+      </ul>
+      <p> </p>
+      <p style="text-align: center"><img height="474" src="assets/images/image318.png" width="95%"/></p>
+      <p style="text-align: center"> </p>
+    </div>
+    <table style="width: 100%;text-align: center">
+      <colgroup>
+        <col style="width: 50px;"/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr style="height: 50px;">
+          <td style="background-color: #EEEEFF;text-align: left;padding-left: 10px">In the branch name you can use the &quot;*&quot; symbol as a universal character, replacing one or more characters. For example, the &quot;feature/*&quot; branch name allows you to use this codebase card for work with all the feature branches in the codebase.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style=" margin-left: 0;">
+      <p style=" margin-left: 0.25in; text-indent: -0.25in;">Click the <strong>Create</strong> button to create a new codebase in Maverix.</p>
+    </div>
+    <p>The new codebase card appears, along with a confirmation notification at the right bottom.</p>
+    <p> </p>
+    <p style="text-align: center"><img height="842" src="assets/images/image320.png" width="95%"/></p>
+    <p> </p>
+    <p>To configure an existing codebase, click the edit <img alt="image84.png" class="ns" height="19" src="assets/images/image61.png" width="20"/> icon in its card. The <strong>Update codebase</strong> window appears.</p>
+    <p> </p>
+    <p style="text-align: center"><img height="550" src="assets/images/image321.png" width="65%"/></p>
+    <p style="text-align: center"> </p>
+    <p>Update the code base parameters as described above and click the <strong>Update </strong>button.</p>
+    <p> </p>
+  </body>
+</html>

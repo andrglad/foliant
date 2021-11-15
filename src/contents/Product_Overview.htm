@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+# Product Overview
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Product Overview</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" />
+</head>
+<body>
+  <h1>Product Overview</h1>
+  <p>Maverix is a DevSecOps platform providing application security at the speed of DevOps.</p>
+  <p>As an Application Security Orchestration and Correlation (ASOC) tool, Maverix integrates Application Security Testing (AST) tools across a Software Development Life Cycle (SDLC) and performs correlation analysis of security issues found by the AST tools.</p>
+  <p>To keep the DevSecOps process under control, Maverix performs an additional function to collect development and security data from all the software engineering and AST tools integrated to the DevSecOps system. This functionality helps implement DevSecOps data analytics and enables intelligence within it using AI.</p>
+  <p>So, the main Maverix product features are:</p>
+  <ul class="Disc">
+    <li>Orchestration</li>
+    <li>Correlation</li>
+    <li>Intelligence</li>
+  </ul>
+  <p>Let’s briefly touch on these three key Maverix features.</p>
+  <h2>Orchestration</h2>
+  <p>Maverix takes complete control of the application security testing process through integration with software development and AST tools. It is a &quot;one-stop-shop&quot; for integrating third-party tools into a united software development cycle as well as for configuring them.</p>
+  <h3>Integration with Software Engineering and AST tools</h3>
+  <p>Maverix connects different entities into a seamless system. The first step is to connect two sets of tools to the platform – software engineering tools and AST tools. Maverix provides out-of-the-box integration with them:</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="331" src="assets/images/image8.png" width="95%" /></p>
+  <p> </p>
+  <p>To connect a tool from the Maverix UI, you only need to make a few clicks and configure the tool settings. Just click the <strong>+Add new</strong> button to connect to a new tool, and enter URL to access the tool and your credentials:</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="591" src="assets/images/image11.png" width="95%" /></p>
+  <p> </p>
+  <p>The list of software engineering tools grouped by DevSecOps practices is as follows:</p>
+  <ol class="RoundSquare">
+    <li>Orchestration (CI) tools:
+      <ol>
+        <li>JetBrains TeamCity.</li>
+        <li>Jenkins.</li>
+        <li>GitLab CI.</li>
+      </ol>
+    </li>
+    <li>Version Control Systems (VCS):
+      <ol>
+        <li>Atlassian Bitbucket.</li>
+        <li>GitLab.</li>
+        <li>Any VCS with a git interface.</li>
+      </ol>
+    </li>
+    <li>Artifact Repository:
+      <ol>
+        <li>Sonatype Nexus Repository Manager.</li>
+        <li>GitLab Repository.</li>
+        <li>File storages with HTTP/HTTPS access.</li>
+      </ol>
+    </li>
+    <li>Defect Tracking Systems (DTS):
+      <ol>
+        <li>Atlassian Jira.</li>
+        <li>JetBrains YouTrack.</li>
+      </ol>
+    </li>
+    <li>Workspaces:
+      <ol>
+        <li>Atlassian Confluence.</li>
+      </ol>
+    </li>
+  </ol>
+  <p>The list of AST tools grouped by practices:</p>
+  <ol class="RoundSquare">
+    <li>Static Application Security Testing (SAST):
+      <ol>
+        <li>Checkmarx.</li>
+        <li>Micro Focus Fortify.</li>
+        <li>SonarQube.</li>
+        <li>DerScanner.</li>
+      </ol>
+    </li>
+    <li>Software Composition Analysis (SCA):
+      <ol>
+        <li>Sonatype Nexus IQ.</li>
+      </ol>
+    </li>
+    <li>Container and Kubernetes Security (CKS):
+      <ol>
+        <li>Clair.</li>
+        <li>Aqua.</li>
+      </ol>
+    </li>
+    <li>Dynamic Application Security Testing (DAST):
+      <ol>
+        <li>Netsparker.</li>
+        <li>Wallarm FAST.</li>
+        <li>Mobix (mDAST).</li>
+      </ol>
+    </li>
+    <li>Penetration Testing:
+      <ol>
+        <li>Burp Suite.</li>
+      </ol>
+    </li>
+  </ol>
+  <p>All connected tools are available in the Maverix UI under the <strong>Tools</strong> menu item.  The parameters of each of them can be viewed and configured:</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="591" src="assets/images/image5.png" width="95%" /></p>
+  <h3>Software Assets Onboarding</h3>
+  <p>Next, we need to connect the applications themselves and their assets, such as codebases, artifacts, application instances, and structure units. Maverix is exactly focused on ensuring the security of the developed applications. The security of these software assets is scanned by AST tools.</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="346" src="assets/images/image18.png" width="95%" /></p>
+  <p> </p>
+  <p>Onboarding of software assets can be performed either automatically using special Command Line Interface (CLI) scripts or manually. During automated onboarding, the scripts add information to Maverix about applications, their codebases, artifacts, and so on.</p>
+  <p>You can add and configure software assets manually using the <strong>Development</strong> menu item:</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="619" src="assets/images/image19.png" width="95%" /></p>
+  <p> </p>
+  <p>The <strong>Development</strong> page contains information about application codebases, artifacts, instances, and structure units. The &quot;structure unit&quot; type of assets helps align the work with the application architecture (modules, components, or microservices):</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="616" src="assets/images/image20.png" width="95%" /></p>
+  <h3>Security Pipelines Management</h3>
+  <p>So, now we are all set to configure and run the CI/CD pipelines. In Maverix, we have not just CI/CD pipelines, but security pipelines with additional security checks.</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="629" src="assets/images/image22.png" width="95%" /></p>
+  <p> </p>
+  <p>The <strong>DevSecOps</strong> page is for working with the application security pipelines. Maverix makes it easy to create a security pipeline based on an existing CI/CD pipeline by adding one or more security checks. The security pipeline can be created automatically using an existing security pipeline template.</p>
+  <p>In Maverix, the security pipeline can be viewed as several cards. The <strong>Sources</strong> area shows the asset to be scanned, and the <strong>Tools</strong> area shows the security pipeline tool chain.</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="597" src="assets/images/image24.png" width="95%" /></p>
+  <h3>Security Quality Criteria Management</h3>
+  <p>Maverix implements Quality Gates to control the results of security scans. First, it automatically checks the scan results and deploys the build only if the Quality Gate criteria are met.</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="615" src="assets/images/image26.png" width="95%" /></p>
+  <p> </p>
+  <p>Suppose an application build should have no high and critical vulnerabilities. In this case, Quality Gate should be defined as follows: zero in the high severity and critical severity thresholds.</p>
+  <p>Select the <strong>QG Config</strong> menu item to configure Quality Gates. To add Quality Gate to the security pipeline, go to the configuration of that pipeline under the <strong>DevSecOps</strong> menu item, and select the existing Quality Gate profile.</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="615" src="assets/images/image27.png" width="95%" /></p>
+  <h3>Security Pipeline Run</h3>
+  <p>Click the <strong>Start scan</strong> icon at the bottom right of the security pipeline card to manually start security scan. Select the <strong>Scans</strong> tab to get details about the scan results. The scan status in relation to the QG is displayed in the <strong>SAST QG</strong>, <strong>SCA QG</strong>, and <strong>DAST QG</strong> fields. The detailed QG results are displayed is a special window.</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="563" src="assets/images/image28.png" width="95%" /></p>
+  <h2>Correlation</h2>
+  <h3>Gathering Security Issues from AST Tools</h3>
+  <p>When a security scan is complete, the security issues are imported into Maverix from AST tools.</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="339" src="assets/images/image29.png" width="95%" /></p>
+  <p> </p>
+  <p>With Maverix UI, you can work with security issues from all AST tools. Maverix provides the standardization of security issue description, the grouping and consolidation of security issue data into a single workspace.</p>
+  <p>Select the <strong>Issues</strong> menu item. Each issue is presented as a separate line. Click the security issue ID to access detailed information about the issue, including recommendations on how to fix it.</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="594" src="assets/images/image32.png" width="95%" /></p>
+  <h3>Handling Security Issues</h3>
+  <p>All security issues detected during security scans are analyzed and triaged by Maverix.</p>
+  <p>First, Maverix analyzes security issues using the AI-based Application Vulnerabilities Correlation (AVC) model. AST tools usually generate dozens or hundreds of security issues. Not all these issues are unique and important. The AVC status indicates whether the issue is true positive or false positive by the Maverix assessment and provides the quantitative assessment.</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="612" src="assets/images/image33.png" width="95%" /></p>
+  <p> </p>
+  <p>Second, Maverix triages the identified security issues based on the correlation model implemented in the system. It groups similar issues that can be resolved simultaneously to treat them as a single issue.</p>
+  <p>After completing the first two steps, you should prioritize security issues. Maverix allows you to prioritize all issues according to their severity, from high to low.</p>
+  <p>Together, these three steps make it much easier to work with the security issues found:</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="400" src="assets/images/image35.png" width="60%" /></p>
+  <h3>Handling Security Defects</h3>
+  <p>With Maverix, security issues can be quickly triaged, grouped, and submitted as defects in DTS.</p>
+  <p>Maverix provides bidirectional synchronization of the status of security defects with DTS. You can configure the synchronization settings on the <strong>Defects Tracking</strong> page.</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="635" src="assets/images/image36.png" width="95%" /></p>
+  <p> </p>
+  <p>Each security defect is created based on one or several grouped similar security issues for further processing by the development team.</p>
+  <h2>Intelligence</h2>
+  <p>DevSecOps data analytics allows you to analyze the security status of applications across all teams and applications in the organization. Maverix aggregates engineering and security data in a data warehouse (DWH) and offers a set of metrics and dashboards to work with that data.</p>
+  <p>Select the <strong>Metrics</strong> menu item at the top left of the Maverix UI. Choose a required metric and configure the filters.</p>
+  <p> </p>
+  <p style="text-align: center"><img class="ns" height="605" src="assets/images/image37.png" style="cursor: nwse-resize;" width="95%" /></p>
+  <p> </p>
+  <p>Data collection, aggregation, and analysis help implement data-driven secure application development. This gives management, development, operations and security teams complete visibility into security and software engineering.</p>
+  <div style=" margin-left: 0;">
+    <p> </p>
+  </div>
+</body>
+</html>

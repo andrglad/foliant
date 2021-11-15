@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Specific parameters of the scan_codebase.py script</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" />
+</head>
+<body>
+  <div>
+    <h2>Specific parameters of the scan_codebase.py script</h2>
+    <table class="noborder">
+      <colgroup>
+        <col span="4" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <th style="background-color: #164A96;color: #FFFFFF">Parameter</th>
+          <th style="text-align: center;background-color: #164A96;color: #FFFFFF">Required parameter</th>
+          <th style="background-color: #164A96;color: #FFFFFF">Description</th>
+          <th style="background-color: #164A96;color: #FFFFFF">Example</th>
+        </tr>
+        <tr>
+          <td><code>--codebase-url</code></td>
+          <td style="text-align: center">+</td>
+          <td>URL of the main code base repository</td>
+          <td><code>--codebase-url https://github.com/appsecco/dvja.git</code></td>
+        </tr>
+        <tr>
+          <td><code>--branch</code></td>
+          <td style="text-align: center">–</td>
+          <td>Repository branch or main codebase tag. By default: master</td>
+          <td><code>--branch master</code></td>
+        </tr>
+        <tr>
+          <td><code>--branch-filter</code></td>
+          <td style="text-align: center">–</td>
+          <td>This parameter allows you to filter branches for scanning. This filter applies both to the main and additional code bases. By default: master</td>
+          <td><code>--branch-filter feature/*<br/>
+			--branch-filter *<br/>
+			--branch-filter develop</code></td>
+        </tr>
+        <tr>
+          <td><code>--codebase-name</code></td>
+          <td style="text-align: center">–</td>
+          <td>Name of code base in Maverix. Maverix back-end should use the appcode, codebase-url and branch parameters</td>
+          <td><code>--codebase-name dvja-master</code></td>
+        </tr>
+        <tr>
+          <td rowspan="2"><code>--codebase-type</code></td>
+          <td rowspan="2" style="text-align: center">–</td>
+          <td rowspan="2">Type of Version Control System By default: git</td>
+          <td rowspan="2"><code>--codebase-type git</code></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <td><code>--additional-codebase-urls</code></td>
+          <td style="text-align: center">–</td>
+          <td>URL of the additional code base repository. This parameter can contain several links separated by a space.</td>
+          <td><code>--additional-codebase-urls http://github.com/appsecco/dvja1.git http://github.com/appsecco/dvja2.git</code></td>
+        </tr>
+        <tr>
+          <td><code>--additional-branches</code></td>
+          <td style="text-align: center">–</td>
+          <td>Tag or branch of additional code base. By default: master. Auxiliary parameter. If this parameter isn’t specified or a single value is specified, it applies to all additional codebases specified by the additional_codebase_urls parameter.</td>
+          <td><code>--additional-branches maser develop</code></td>
+        </tr>
+        <tr>
+          <td><code>--codebase-build-tool</code></td>
+          <td style="text-align: center">–</td>
+          <td>Build tool. Valid values: maven, gradle, nuget, npm, pip. By default: maven</td>
+          <td><code>--codebase-build-tool maven</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Security pipeline settings</title>
+    <meta name="generator" content="Adobe RoboHelp 2020"/>
+    <link rel="stylesheet" href="assets/css/default.css"/>
+    <link rel="stylesheet"/>
+  </head>
+  <body>
+    <h3 data-list-level="4">Security pipeline settings</h3>
+    <p>Select the <strong>Settings</strong> tab to change the security pipeline settings.</p>
+    <p> </p>
+    <p style="text-align: center"><img height="821" src="assets/images/image348.png" width="95%"/></p>
+    <p style="text-align: center"> </p>
+    <p>On this tab, you can use the selectors to change the following settings:</p>
+    <ul class="Disc">
+      <li><strong>Pipeline activity</strong>. If the selector is off, the scan can’t be performed in this security pipeline. The security pipeline status is indicated with a colored line at the top of the security pipeline card. If the line is green (the selector is on), the scan can be performed in the security pipeline. </li>
+    </ul>
+    <p> </p>
+    <p style="text-align: center"><img height="287" src="assets/images/image350.png" width="40%"/></p>
+    <p style="text-align: center"> </p>
+    <div style=" margin-left: 0;">
+      <p id=""><span style="margin-left:40px;">If the line is gray (the selector is off), the scan can’t be performed in the security pipeline.</span></p>
+      <p> </p>
+    </div>
+    <p style="text-align: center"><img height="287" src="assets/images/image349.png" width="40%"/></p>
+    <p style=" margin-left: 0.25in;"> </p>
+    <div style=" margin-left: 0;">
+      <ul class="Disc">
+        <li><strong>Bypass</strong> If this selector is on, no scanning is performed when starting the security pipeline. The artifact will be marked with the BYPASS tag, and the <strong>Bypass is enabled</strong> <img alt="image185.png" class="ns" height="19" src="assets/images/image6.png" width="20"/> icon will appear in the security pipeline card</li>
+      </ul>
+      <p> </p>
+      <table border="0" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+        <colgroup>
+          <col style="width: 67px;"/>
+          <col style="width: 920px;"/>
+        </colgroup>
+        <tbody>
+          <tr>
+            <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><img class="ns" height="54" src="assets/images/image.png" width="55"/></td>
+            <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><strong><span style="color:#164a96;"><span style="font-size:1rem">This functionality is available only after adding a tagged artifact to the security pipeline, see the &quot;<a href="Artifact_Security_Pipeline.htm">Artifact Security Pipeline</a>&quot; section.</span></span></strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p> </p>
+      <p>When you start such a security pipeline, a confirmation notification appears in the lower right corner of the user interface, but no actual scan is performed. A corresponding warning is displayed in the scan history (the Scans tab).
+        <br/>
+        <br/>
+        For example, you can use this functionality during on-boarding processes using Meta-runner, if you only want to scan the artifact, but not the code base. In this case, the Bypass option is activated for the code base security pipeline. </p>
+      <p> </p>
+      <p style="text-align: center"><img height="279" src="assets/images/image351.png" width="40%"/></p>
+      <p style="text-align: center"> </p>
+    </div>
+    <ul class="Disc">
+      <li><strong>CI/CD overwrite protection</strong>. This selector blocks the export of the security pipeline to the CI/CD tool using the Export CI/CD menu item. This option protects the security pipeline settings from unwanted overwriting. The Overwrite protection is enabled <img alt="image226.png" class="ns" height="24" src="assets/images/image7.png" width="20"/> icon appears in the security pipeline card.</li>
+    </ul>
+    <p> </p>
+    <p style="text-align: center"><img height="281" src="assets/images/image352.png" width="40%"/></p>
+    <p style="text-align: center"> </p>
+    <ul class="Disc">
+      <li><strong>Is template</strong>. This option allows you to use this security pipeline as a template for creating new ones. The template pipeline <img alt="image206.png" class="ns" src="assets/images/image106.png"/> icon appears in the security pipeline box. It&#39;s important to note that a predefined security pipeline template should be defined in Maverix to complete the on-boarding processes correctly (see the &quot;<a href="On-boarding_-_automating_Maverix_integration_into_the_development_cycle.htm">On-boarding - automating Maverix integration into the development cycle </a>&quot; section). Any previously created for this application Security Pipeline of an appropriate type (for code bases, artifacts, etc.) can be used as such template. If several Security Pipelines of the same type are defined for an application, it is necessary to activate the &quot;Is template&quot; option for the selected security pipeline to complete the on-boarding in a predictable manner. That way, the newly created security pipelines for this application will automatically use the selected template.</li>
+    </ul>
+    <p> </p>
+    <p style="text-align: center"><img height="277" src="assets/images/image353.png" width="40%"/></p>
+    <p style="text-align: center"> </p>
+    <div>
+      <ul class="Disc">
+        <li><strong>Delete pipeline</strong>. Click the <strong>Delete </strong>button to deny access to the security pipeline and any actions with it.</li>
+      </ul>
+      <p> </p>
+    </div>
+  </body>
+</html>

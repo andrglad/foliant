@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Ubuntu&display=swap');
+/*Created with Adobe RoboHelp.*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+}
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 2.2rem;
+  color: #1f63af;
+}
+h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #1f63af;
+}
+h3 {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #1f63af;
+}
+h4 {
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: #1f63af;
+}
+h5 {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #1f63af;
+}
+h6 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #1f63af;
+}
+p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+a.expandspot {
+  color: #008000;
+  cursor: pointer;
+  font-style: italic;
+  text-decoration: none;
+}
+span.expandtext {
+  font-style: italic;
+  font-weight: normal;
+  color: #ff0000;
+}
+a.dropspot {
+  cursor: pointer;
+  color: #008000;
+  font-style: italic;
+  text-decoration: none;
+}
+a.glossterm {
+  color: #800000;
+  cursor: pointer;
+  font-style: italic;
+  text-decoration: none;
+}
+span.glosstext {
+  font-style: italic;
+  font-weight: normal;
+  color: #0000ff;
+}
+ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  --prefix-size: 40px;
+  --prefix-fixed-size: false;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --vertical-spacing: 4px;
+  counter-reset: item1;
+  list-style: none;
+  padding-left: var(--prefix-size);
+  margin-left: calc(var(--list-indent) - var(--prefix-size));
+}
+ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  --prefix-size: 40px;
+  --prefix-fixed-size: false;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --vertical-spacing: 0px;
+  counter-reset: item1;
+  list-style: none;
+  padding-left: var(--prefix-size);
+  margin-left: calc(var(--list-indent) - var(--prefix-size));
+}
+a.minitoc-caption {
+  text-decoration: none;
+  color: initial;
+  font-weight: bold;
+}
+p.minitoc-caption {
+  font-weight: bold;
+  font-size: 16px;
+}
+a {}
+a.minitoc-list-item {}
+div.breadcrumbs {}
+span.breadcrumbs-home-prefix {}
+a.breadcrumbs-home {}
+.breadcrumbs-separator {}
+a.breadcrumbs-link {}
+a.breadcrumbs-topic {}
+p.seealso-caption {
+  font-weight: bold;
+  font-size: 16px;
+}
+a.seealso-list-item {}
+p.reltopics-caption {
+  font-weight: bold;
+  font-size: 16px;
+}
+a.reltopics-list-item {}
+:root {
+  --noborder-theme-color: #003366;
+  --firstcolrow-theme-color: rgb(237, 125, 49);
+  --firstcolrow-even-row: rgba(237, 125, 49, 0.5);
+  --firstcolrow-odd-row: rgba(237, 125, 49, 0.25);
+  --evenrows-theme-color: #bfbfbf;
+  --evenrows-row-color: rgba(191, 191, 191, 0.5);
+  --borderonly-theme-color: #bfbfbf;
+}
+table.noborder {
+  border-collapse: collapse;
+}
+table.noborder td {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--noborder-theme-color);
+  border-left: 0;
+  border-top: 0;
+  padding-top: 2px;
+  padding-right: 4px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  vertical-align: center;
+}
+table.noborder tr:first-child td {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-top: 0;
+  border-left: 0;
+  background-color: var(--noborder-theme-color);
+  color: #FFFFFF;
+  border-bottom: 0;
+}
+table.noborder tr:last-child td {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--noborder-theme-color);
+  border-left: 0;
+  border-bottom: 0;
+}
+table.noborder tr td:last-child {
+  border-right: 0;
+}
+ol.RoundSquare {
+  list-style: disc;
+}
+ol.RoundSquare>li>ol {
+  list-style: square;
+}
+ol.RoundSquare>li>ol>li>ol {
+  list-style: circle;
+}
+ol.RoundSquare>li>ol>li>ol>li>ol {
+  list-style: disc;
+}
+ol.RoundSquare>li>ol>li>ol>li>ol>li>ol {
+  list-style: square;
+}
+ol.RoundSquare>li>ol>li>ol>li>ol>li>ol>li>ol {
+  list-style: circle;
+}
+ul.Disc {
+  list-style-type: disc;
+}
+table.firstcolrow {
+  border-collapse: collapse;
+}
+table.firstcolrow td {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ffffff;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+table.firstcolrow tr:nth-child(even) td {
+  background-color: var(--firstcolrow-even-row);
+}
+table.firstcolrow tr:nth-child(odd) td {
+  background-color: var(--firstcolrow-odd-row);
+}
+table.firstcolrow tr:first-child td {
+  background-color: var(--firstcolrow-theme-color);
+  color: #FFFFFF;
+  font-weight: bold;
+  text-align: center;
+}
+table.firstcolrow tr td:first-child {
+  background-color: var(--firstcolrow-theme-color);
+  color: #FFFFFF;
+  font-weight: bold;
+}
+table.evenrows {
+  border-collapse: collapse;
+}
+table.evenrows td {
+  padding-top: 2px;
+  padding-right: 4px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--evenrows-theme-color);
+}
+table.evenrows tr:nth-child(even) td {
+  background-color: var(--evenrows-row-color);
+}
+table.borderonly {
+  border-collapse: collapse;
+}
+table.borderonly td {
+  padding-top: 2px;
+  padding-right: 4px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--borderonly-theme-color);
+}
+img {
+  border-width: 2px;
+  border-color: #1f63af;
+  border-left-width: 2px;
+  border-left-color: #1f63af;
+  border-top-width: 2px;
+  border-top-color: #1f63af;
+  border-right-width: 2px;
+  border-right-color: #1f63af;
+  border-bottom-width: 2px;
+  border-bottom-color: #1f63af;
+  border-style: solid;
+  border-left-style: solid;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-top-left-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+  box-shadow: 3px 3px 3px 3px #ccc;
+}
+img.ns {
+  border-width: 0 px;
+  border-style: none;
+  border-color: #000000;
+  border-left-width: 1px;
+  border-left-style: none;
+  border-left-color: #000000;
+  border-top-width: 1px;
+  border-top-style: none;
+  border-top-color: #000000;
+  border-right-width: 1px;
+  border-right-style: none;
+  border-right-color: #000000;
+  border-bottom-width: 1px;
+  border-bottom-style: none;
+  border-bottom-color: #000000;
+  box-shadow: 0px 0px 0px 0px;
+}
+ul.Square {
+  list-style: square;
+}
+ol.Decimal {
+  list-style: decimal;
+}
+ul.Circle {
+  list-style: circle;
+}
+code {}

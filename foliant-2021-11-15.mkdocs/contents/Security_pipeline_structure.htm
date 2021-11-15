@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Security pipeline structure</title>
+    <meta name="generator" content="Adobe RoboHelp 2020"/>
+    <link rel="stylesheet" href="assets/css/default.css"/>
+    <link rel="stylesheet"/>
+  </head>
+  <body>
+    <h3 data-list-level="4">Security pipeline structure</h3>
+    <p>In Maverix, each security pipeline is mapped to an application. The security pipeline performs security scans. Security pipelines provide automated application security testing for development, test, or production environments. Security pipelines run security checks during each engineering cycle.</p>
+    <p>Security pipelines are targeted to analyze three types of objects. Thus, there are three types of security pipelines:</p>
+    <div style=" margin-left: 0;">
+      <ul class="Disc">
+        <li>Source Code Security Pipeline.</li>
+        <li>Artifact Security Pipeline.</li>
+      </ul>
+    </div>
+    <ul class="Disc">
+      <li>Application Instance Security Pipeline.</li>
+    </ul>
+    <p>Security pipelines are generated in the orchestration tool (e.g., TeamCity) for a particular codebase/artifact/instance of application based on the configuration of software engineering and AST tools used.</p>
+    <p>It’s possible to start a security scan by clicking the <strong>Start scan</strong> <img alt="image208.png" class="ns" height="20" src="assets/images/image92.png" width="20"/> button in the security pipeline card.</p>
+    <p>Select the <strong>Applications</strong> menu item at the top left of the Maverix user interface to start work with applications and their security pipelines. Application cards appear on the screen.</p>
+    <p> </p>
+    <p style="text-align: center"><img height="762" src="assets/images/image342.png" style="cursor: nwse-resize;" width="95%"/></p>
+    <p> </p>
+    <p>Click the edit icon <img alt="image12.png" class="ns" src="assets/images/image94.png"/> at the bottom right of the application card on the <strong>Applications</strong> page. The page with detailed information about this application appears. The application name can be seen in the top left corner of the page that appears. Click the <strong>DevSecOps</strong> menu item on the left. Three tabs with three types of application security pipelines appear.</p>
+    <p> </p>
+    <p style="text-align: center"><img height="827" src="assets/images/image344.png" width="95%"/></p>
+    <p> </p>
+    <p>In addition to three tabs with the three types of security pipelines, there’s the <strong>DevSecOps perimeter control</strong> tab for working with proxy repositories. For more information, see the &quot;<a data-xref="{title}" href="Proxy_repositories.htm">Proxy repositories</a>&quot; section.</p>
+    <p>Click the edit <img alt="image12.png" class="ns" src="assets/images/image96.png"/> icon in the lower right corner of the security pipeline card to view or update information on that pipeline. For example, if you click the edit <img alt="image12.png" class="ns" src="assets/images/image97.png"/> icon in a card on a source code security pipeline, you can get the following information about the pipeline on the <strong>Structure</strong> tab:</p>
+    <div style=" margin-left: 0;">
+      <ul class="Disc">
+        <li>VCS tool, codebase URL, branch type, build tool.</li>
+        <li>Orchestration (CI/CD) tool and its URL.</li>
+        <li>Security scan tool (e.g., Checkmarx) and a scan mode used (e.g., incremental).</li>
+        <li>General information: the last update date, the last export to CI/CD, the last scan date, status of the security issue auto-import.</li>
+      </ul>
+    </div>
+    <div>
+      <p style="text-align: center"> </p>
+      <p style="text-align: center"><img height="1027" src="assets/images/image346.png" width="95%"/></p>
+    </div>
+    <p> </p>
+    <p>The security pipeline of source code contains several cards—one for each tool in the pipeline. For example, the security pipeline shown above contains three parts, represented as three cards:</p>
+    <div style=" margin-left: 0;">
+      <ul class="Disc">
+        <li>Code bases (source code).</li>
+        <li>Orchestration (CI/CD) tools.</li>
+      </ul>
+    </div>
+    <ul class="Disc">
+      <li>AST tool (Checkmarx).</li>
+    </ul>
+    <p>The configuration process of the security pipeline includes the following steps:</p>
+    <div style=" margin-left: 0;">
+      <ul class="Disc">
+        <li>Selection of software engineering and AST tools.</li>
+        <li>Configuration of each selected tool.</li>
+      </ul>
+    </div>
+    <ul class="Disc">
+      <li>Definition of quality criteria and creation of Quality Gates (for more information, see the &quot;<a href="Adding_Quality_Gate_to_Security_Pipelines.htm#_Toc79502995">Adding Quality Gate to Security Pipelines</a>&quot; section of this document and the &quot;<a href="../AAG/Quality_Gates.htm">Quality Gates</a>&quot; section of Application Administrator Guide).</li>
+    </ul>
+    <p>A set of software engineering and AST tools used depends on the available licenses. Each tool&#39;s configuration is defined in Maverix. As an example, consider the Checkmarx tool configuration. Click the Edit tool <img alt="image12.png" class="ns" src="assets/images/image98.png"/> icon at the bottom right of the Checkmarx card. The <strong>Update SAST scan config</strong> window appears.</p>
+    <p> </p>
+    <p style="text-align: center"><img height="633" src="assets/images/image347.png" width="50%"/></p>
+    <p style="text-align: center"> </p>
+    <p>Define the Checkmarx configuration in this window:</p>
+    <div style=" margin-left: 0;">
+      <ul class="Disc">
+        <li><strong>Scan mode</strong>. Select the <b>Full</b> or <b>Incremental</b> option from the drop-down menu.</li>
+        <li>Select <strong>Predefined preset/Dynamically modified preset</strong> to use for the scan. For more information on Dynamically modified presets for Checkmarx, see the &quot;<a data-xref="{title}" href="Source_Code_Security_Pipeline.htm">Source Code Security Pipeline</a>&quot; section.</li>
+        <li><strong>Preset</strong>. Select the rules defined in the Checkmarx tool (Checkmarx Default, Checkmarx Express, All, High and Medium, etc.). This field is active when <strong>Predefined preset</strong> is selected.</li>
+        <li>The <strong>Root team</strong> is defined in the Checkmarx settings.</li>
+        <li>Select a structural unit from the <strong>Team</strong> drop-down menu.</li>
+        <li><strong>Excluded directories</strong> Directories specified here will not be scanned during a security scan.</li>
+      </ul>
+    </div>
+    <p>Click the <strong>Update</strong> button to save the Checkmarx tool configuration. The Checkmarx card displays the new settings after configuration.</p>
+    <p>Note that Maverix automatically updates the settings in the Checkmarx tool itself. No additional user action is required.</p>
+    <p>A Maverix user with Manager permissions can perform the following actions on a security pipeline by clicking the <strong>Actions</strong> <img alt="image4.png" class="ns" height="18" src="assets/images/image100.png" width="30"/> button in the right upper corner and selecting one of these actions from the drop-down menu:</p>
+    <div style=" margin-left: 0;">
+      <ul class="Disc">
+        <li>Export a security pipeline to the CI/CD tool.</li>
+        <li>Start scan (run a security pipeline).</li>
+        <li>Add a new element (tool) to the security pipeline.</li>
+      </ul>
+      <p> </p>
+    </div>
+  </body>
+</html>

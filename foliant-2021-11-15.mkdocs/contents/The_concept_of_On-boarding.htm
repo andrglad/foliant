@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8"/>
+    <title>The concept of On-boarding</title>
+    <meta name="generator" content="Adobe RoboHelp 2020"/>
+    <link rel="stylesheet" href="assets/css/default.css"/>
+  </head>
+  <body>
+    <div>
+      <h3>The concept of On-boarding</h3>
+      <p>Maverix implements mechanisms to automate and, therefore, greatly simplify and accelerate the process of integrating the system into a single software development cycle, and thus facilitate the overall security control of the software being developed. This process adds information to Maverix about code bases, artifacts, etc., generates corresponding security pipelines, launches scans and if necessary initiates data exchange, such as scan results, with other tools and all these operations are performed automatically. We use the term on-boarding to define this process.</p>
+      <p>In other words, on-boarding is a fast and efficient way for the DevOps team to quickly and cost-effectively redefine existing workflows in favor of further software development in the DevSecOps paradigm. Developers already using DevSecOps practices get a powerful tool that can drastically reduce the amount of manual routine operations and improve the efficiency of production processes.</p>
+      <p>In practice, on-boarding in Maverix is implemented using scripts launched with a set of specific parameters in the Command Line Interface (CLI). This approach implements a simplified way of interacting with the system&#39;s REST API.</p>
+      <p>Two scripts are used to scan code bases and artifacts, respectively: <strong><code>scan_codebase.py</code></strong> and <strong><code>scan_artifact.py</code></strong>, please see the table below. The scripts are written in Python 3.7 and interact with the Maverix back-end via the http protocol. A description of the script parameters and examples of their use for scanning code bases and various types of artifacts are given in <a href="Appendix_1._Parameters_of_on-boarding_scripts.htm">Appendix 1</a> and <a href="Appendix_2._Examples_of_running_on-boarding_scripts.htm">Appendix 2</a>, respectively.</p>
+      <p> </p>
+      <table class="noborder" style="width: 100%;">
+        <colgroup>
+          <col span="2" style="width: 50%;"/>
+          <col span="2" style="width: 100%;"/>
+        </colgroup>
+        <tbody>
+          <tr>
+            <th style="background-color: #164A96;color: #FFFFFF">Script</th>
+            <th style="background-color: #164A96;color: #FFFFFF">Description</th>
+          </tr>
+          <tr>
+            <td style="">scan_codebase.py</td>
+            <td>Scanning of code bases</td>
+          </tr>
+          <tr>
+            <td style="">scan_artifact.py</td>
+            <td>Scanning of artifacts</td>
+          </tr>
+        </tbody>
+      </table>
+      <p> </p>
+      <p>As an example, let&#39;s take a step-by-step look at a typical code base scanning process.</p>
+      <pre class="language-bash"><code class="language-bash">py scan_codebase.py \
+--url http://hub.dev.maverix.co/ \
+‎--token ***** ‎\
+--appcode 09022021_cli ‎\
+--branch master \
+‎--codebase-url http://gitlab.service.yourcompany.com/test/java-web-project.git</code></pre>
+      <ol class="Decimal">
+        <li>Maverix finds the application whose code was passed using the <strong>‎<code>––appcode</code></strong> parameter, otherwise it creates a new one.</li>
+        <li>Maverix finds the code base specified by the <code>--codebase-url</code> and <strong>‎<code>--branch</code></strong> parameters, otherwise it creates a new one.</li>
+        <li>Maverix finds security pipeline for codebase analysis. If the security pipeline is found, Maverix starts it, otherwise a new security pipeline is created based on a suitable template (see the &quot;<a data-xref="{title}" href="Security_pipeline_settings.htm">Security pipeline settings</a>&quot; section) and a scan is started. If a suitable template isn&#39;t found, an error message is generated, see the &quot;<a data-xref="{title}" href="Appendix_3._Scan_results.htm">Appendix 3. Scan results</a>&quot;. In this case, you should create a corresponding security pipeline template using the Maverix user interface, see the <a data-xref="{title}" href="Security_pipeline_settings.htm">Security pipeline settings</a> section.</li>
+        <li>Once the scan is completed, the results are returned taking into account the Quality Gate (see the section &quot;<a data-xref="{title}" href="Adding_Quality_Gate_to_Security_Pipelines.htm">Adding Quality Gate to Security Pipelines</a>&quot;) and a link to the scan results is displayed in the CLI. After clicking the link (authorization in Maverix is required), you can view the list of security issues detected during the scan. This functionality allows you to quickly evaluate security issues detected during the scan, without the need to use filtering tools. In addition, scan results can be saved to a text file that contains information on the scan status and the reason for its assignment, the practices used, etc.</li>
+      </ol>
+      <p>In addition, there is an interaction mechanism that allows you to import scan results from various AST tools (Checkmarx, Nexus IQ) via REST API. This approach is convenient when a company has already built a development process using particular tools, and the main task is to transfer all data to Maverix. In such a situation there is no need to run a scan like in the example above. As a result, all the necessary objects and links are created on the Maverix side: applications, codebases, security pipelines. Moreover, the import of vulnerabilities is launched, and QG criteria is checked.</p>
+      <p>The <code>import_results.py</code> script is used to import the results. A description of the script launch parameters is given in the &quot;<a data-xref="{title}" href="Appendix_1._Parameters_of_on-boarding_scripts.htm">Appendix 1. Parameters of on-boarding scripts</a>&quot;.</p>
+      <p> </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Adding Quality Gate to Security Pipelines</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" />
+</head>
+<body>
+  <div>
+    <h3 data-list-level="4">Adding Quality Gate to Security <span lang="en-US">Pipelines</span></h3>
+    <p>Once a Quality Gate profile has been created and configured (see the &quot;<a href="../AAG/Quality_Gates.htm" title="Quality Gates"><span data-highlight-container="true"><span data-highlight="true">Quality</span><span> </span><span data-highlight="true">Gates</span></span></a>&quot; sections of the Application Administrator Guide), it can be added to the Security Pipeline (s) of one or more applications.</p>
+    <p>To add Quality Gate to the Security Pipeline, select an application (see the <a href="Applications.htm">Applications</a> section) and open the Security Pipeline settings page (see the <a href="Security_pipeline_settings.htm">Security pipeline settings</a> section).</p>
+    <p>Open the <strong>Quality Gate</strong> tab and select the previously created Quality Gate profile from the drop-down menu (see the &quot;<a href="../AAG/Quality_Gates.htm" title="Quality Gates"><span data-highlight-container="true"><span data-highlight="true">Quality</span><span> </span><span data-highlight="true">Gates</span></span></a>&quot; section of the Application Administrator Guide), then click the <strong>Save</strong> button to enable the Quality Gate in the Security Pipeline.</p>
+    <p> </p>
+    <p style="text-align: center"><img height="878" src="assets/images/image354.png" width="95%" /></p>
+    <p> </p>
+    <p>Once a Quality Gate is added to the Security Pipeline, the list of conditions appears below.</p>
+    <p>Select another Quality gate from the drop-down menu and click the <strong>Save</strong> button to add it. The page will display the conditions for the newly connected Quality Gate.</p>
+    <p> </p>
+    <table border="0" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+      <colgroup>
+        <col style="width: 82px;" />
+        <col style="width: 905px;" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><img class="ns" height="54" src="assets/images/image.png" width="55" /></td>
+          <td style="border-width: 0px; border-style: none; border-color: rgb(255, 255, 255);"><strong><span style="color:#164a96;"><span style="border-bottom-color:#000080;border-bottom-width:1px;border-color:#000080;border-left-color:#000080;border-left-width:1px;border-right-color:#000080;border-right-width:1px;border-top-color:#000080;border-top-width:1px;border-width:1px;">Only one Quality Gate can be connected to a Security Pipeline at a time. Once a new Quality Gate is connected, the previously connected one has disconnected automatically.</span></span></strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><br />
+      Click the <strong>Unlink</strong> button to disconnect Quality Gate from the Security Pipeline.</p>
+    <p>Let&#39;s take a look at an example of using Quality Gate in the Security Pipeline. Suppose the following criteria are defined for releasing an application: absence of any high/critical severity issues identified by SAST and DAST tools.</p>
+    <p>To create a Quality Gate with these criteria, select the following parameters when configuring the Quality Gate profile (see the &quot;<a href="../AAG/quality_gates.htm">Quality Gates&quot; </a> section of the Application Administrator Guide).</p>
+    <p> </p>
+    <p style="text-align: center"><img height="266" src="assets/images/image355.png" width="60%" /></p>
+    <p> </p>
+    <p>The list of specified conditions will look as follows.</p>
+    <p> </p>
+    <p style="text-align: center"><img height="893" src="assets/images/image356.png" width="95%" /></p>
+    <p> </p>
+    <p>So we have created a Quality Gate that, when connected to the Security Pipeline, will track compliance with the specified criteria.</p>
+    <p>If the Quality Gate criteria aren’t met (at least one vulnerability of high or critical severity is found during the scan for the example above), Maverix will stop the Security Pipeline and the application release will not be created. In order to issue a release that meets the specified QG criteria, all high and critical severity vulnerabilities should be fixed prior to launching the Security Pipeline that creates the application release.</p>
+    <p> </p>
+  </div>
+</body>
+</html>

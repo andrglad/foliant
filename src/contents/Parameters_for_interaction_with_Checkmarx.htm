@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Parameters for interaction with Checkmarx</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" />
+</head>
+<body>
+  <div>
+    <h3>Parameters for interaction with Checkmarx</h3>
+  </div>
+  <table border="1" cellpadding="1" cellspacing="1" class="noborder" style="border-collapse:collapse; width:100%">
+    <colgroup>
+      <col style="width: 228px;" />
+      <col style="width: 197px;" />
+      <col style="width: 527px;" />
+      <col style="width:25%" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td style="text-align: center;font-weight: bold;background-color: #164A96">Parameter</td>
+        <td style="text-align: center;font-weight: bold;background-color: #164A96">Required parameter</td>
+        <td style="text-align: center;font-weight: bold;background-color: #164A96">Description</td>
+        <td style="text-align: center;font-weight: bold;background-color: #164A96">Example</td>
+      </tr>
+      <tr>
+        <td style=""><code>--cx-tool-url</code></td>
+        <td style="text-align: center;">+</td>
+        <td style="">URL of the Checkmarx instance</td>
+        <td><code>--cx-tool-url https://cx.dev.maverix.co</code></td>
+      </tr>
+      <tr>
+        <td style=""><code>--cx-project-name</code></td>
+        <td style="text-align: center;">+</td>
+        <td style="">The name of the project in the Checkmarx instance above</td>
+        <td><code>--cx-project-name DVJA_dvja-master</code></td>
+      </tr>
+      <tr>
+        <td style=""><code>--cx-team</code></td>
+        <td style="text-align: center;">–</td>
+        <td style="">Checkmarx team name, by default: CxServer</td>
+        <td><code>--cx-team CxServer\DEV\DVJA</code></td>
+      </tr>
+      <tr>
+        <td style=""><code>--cx-scan-id</code></td>
+        <td style="text-align: center;">–</td>
+        <td style="">Scan ID in the Checkmarx project. If this parameter is absent, the results of the last scan are imported</td>
+        <td><code>--cx-scan-id 1000650</code></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
